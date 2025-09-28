@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A monorepo for my portfolio built with Next.js, Strapi and Supabase",
+  "main": "index.js",
+  "repository": "https://github.com/abhishek-maurya7/portfolio.git",
+  "author": "Abhishek Maurya",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "cms"
+  ]
+}
