@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_theme_settings",
+  "info": {
+    "displayName": "ThemeSetting",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "default": "system",
+      "enum": [
+        "system",
+        "dark",
+        "light"
+      ]
+    }
+  },
+  "config": {}
+}
