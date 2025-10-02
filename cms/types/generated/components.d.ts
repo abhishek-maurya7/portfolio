@@ -62,18 +62,6 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedThemeSetting extends Struct.ComponentSchema {
-  collectionName: 'components_shared_theme_settings';
-  info: {
-    displayName: 'ThemeSetting';
-    icon: 'write';
-  };
-  attributes: {
-    name: Schema.Attribute.Enumeration<['system', 'dark', 'light']> &
-      Schema.Attribute.DefaultTo<'system'>;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -82,7 +70,6 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
-      'shared.theme-setting': SharedThemeSetting;
     }
   }
 }
