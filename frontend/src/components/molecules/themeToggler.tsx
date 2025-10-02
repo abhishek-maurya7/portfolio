@@ -3,8 +3,9 @@
 import { useContext, useState } from 'react';
 import { Button } from '@/components/atoms';
 import { ThemeContext } from '@/contexts/themeProvider';
-import { cn } from '@/lib/utils';
+
 import { Menu, Moon, Sun } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export function ThemeToggler() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -13,7 +14,7 @@ export function ThemeToggler() {
   return (
     <div
       className={cn(
-        'fixed right-0 bottom-3/4 flex items-stretch rounded-md transition-all duration-300 ease-in-out md:right-4 md:bottom-8 bg-orange-400',
+        'fixed right-0 bottom-3/4 flex items-stretch rounded-md transition-all duration-300 ease-in-out md:right-4 md:bottom-8 bg-orange-300',
         !open && 'translate-x-12 md:translate-none',
       )}
     >
