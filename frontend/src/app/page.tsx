@@ -1,57 +1,25 @@
-import { Button, Typography } from '@/components/atoms';
-import { strapiClient } from '@/lib/strapi/client';
-import { HERO_QUERY } from '@/lib/strapi/queries';
-import { FileCode2 } from 'lucide-react';
-import { Metadata } from 'next';
+import Hero from "@/components/organisms/hero";
+import type { HeroSectionProps } from "@/types/components/hero.types";
+import { getStrapiData } from "@/lib/strapi/client";
+import { GET_HERO_QUERY } from "@/lib/strapi/queries";
+import { Metadata } from "next";
+import { Typography } from "@/components/atoms";
+import Navbar from "@/components/molecules/navbar";
 
 export const metadata: Metadata = {
-  title: 'Abhishek Maurya | Frontend Developer',
+  title: "Abhishek Maurya | Frontend Developer",
 };
 
+export const revalidate = false;
+
 export default async function Home() {
-  const {hero} = await strapiClient.request(HERO_QUERY);
+  const { hero } = (await getStrapiData(GET_HERO_QUERY)) as {
+    hero: HeroSectionProps;
+  };
 
   return (
-    <main>
-      <section className="flex h-[calc(100dvh-64px)] flex-col pb-12 md:items-center md:px-0 md:pb-16">
-        <div className="mt-auto flex flex-col space-y-2 text-left md:m-auto">
-          <h3 className="text-xl text-gray-600 md:text-2xl dark:text-zinc-400">
-            Hi
-            <span
-              role="img"
-              aria-label="waving hand"
-            >
-              👋
-            </span>
-            , I am
-          </h3>
-
-          <h1 className="text-5xl font-bold text-gray-900 md:text-7xl dark:text-zinc-100">
-            {hero.name},
-          </h1>
-
-          <h2 className="text-2xl font-medium text-gray-800 md:text-3xl dark:text-zinc-300">
-            I am a{' '}
-            <u className="decoration-blue-600 underline-offset-4 dark:decoration-blue-400">
-              {hero.role}
-            </u>{' '}
-            developer.
-          </h2>
-
-          <p className="mt-2 max-w-xl text-base text-gray-700 md:text-lg dark:text-zinc-400">
-            {hero.short_bio}
-          </p>
-          <a
-            href={hero.resume_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex w-max items-center justify-center rounded-sm bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-2 text-white shadow-md transition-all hover:from-blue-600 hover:to-indigo-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-400"
-          >
-            <Typography variant="bodyLarge">Resume</Typography>
-            <FileCode2 className="ml-1" size={18} />
-          </a>
-        </div>
-      </section>
+    <main className="">
+      <Hero {...hero} />
     </main>
   );
 }
