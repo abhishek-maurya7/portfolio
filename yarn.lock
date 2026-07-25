@@ -11211,7 +11211,6 @@ __metadata:
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     class-variance-authority: "npm:^0.7.1"
-    clsx: "npm:^2.1.1"
     eslint: "npm:^9"
     eslint-config-next: "npm:16.2.11"
     eslint-plugin-storybook: "npm:^10.5.4"
