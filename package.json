@@ -4,5 +4,8 @@
   "workspaces": [
     "frontend",
     "cms"
-  ]
+  ],
+  "scripts": {
+    "dev": "yarn workspaces foreach -A -p -i -v run dev"
+  }
 }
