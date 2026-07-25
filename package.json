@@ -6,6 +6,8 @@
     "cms"
   ],
   "scripts": {
-    "dev": "yarn workspaces foreach -A -p -i -v run dev"
+    "dev": "yarn workspaces foreach -A -p -i -v run dev",
+    "storybook": "yarn workspace frontend storybook",
+    "build-storybook": "yarn workspace frontend build-storybook"
   }
 }
