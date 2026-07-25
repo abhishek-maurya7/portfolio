@@ -1,0 +1,8 @@
+{
+  "name": "portfolio",
+  "packageManager": "yarn@4.17.1",
+  "workspaces": [
+    "frontend",
+    "cms"
+  ]
+}
