@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_self",
+        "_blank",
+        "_parent",
+        "_top"
+      ]
+    },
+    "rel": {
+      "type": "string",
+      "default": "noopener noreferrer"
+    }
+  },
+  "config": {}
+}

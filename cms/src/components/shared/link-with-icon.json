@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_link_with_icons",
+  "info": {
+    "displayName": "Link With Icon"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
