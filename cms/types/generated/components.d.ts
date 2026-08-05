@@ -20,11 +20,21 @@ export interface SharedLink extends Struct.ComponentSchema {
 export interface SharedLinkWithIcon extends Struct.ComponentSchema {
   collectionName: 'components_shared_link_with_icons';
   info: {
-    displayName: 'Link With Icon';
+    displayName: 'Link with icon';
   };
   attributes: {
     icon: Schema.Attribute.String;
     link: Schema.Attribute.Component<'shared.link', false>;
+  };
+}
+
+export interface SharedRichText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_rich_texts';
+  info: {
+    displayName: 'Rich text';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
   };
 }
 
@@ -33,6 +43,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.link': SharedLink;
       'shared.link-with-icon': SharedLinkWithIcon;
+      'shared.rich-text': SharedRichText;
     }
   }
 }
