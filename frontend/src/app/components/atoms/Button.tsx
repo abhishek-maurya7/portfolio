@@ -9,7 +9,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const classes = cva(
-  "px-3 py-2 text-base flex transition-all duration-150 focus:outline-none focus-visible:ring-2 disabled:pointer-events-none font-medium",
+  "px-3 py-2 text-base font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 disabled:pointer-events-none",
   {
     variants: {
       variant: {

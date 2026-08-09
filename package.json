@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "yarn workspaces foreach -A -p -i -v run dev",
     "storybook": "yarn workspace frontend storybook",
-    "build-storybook": "yarn workspace frontend build-storybook"
+    "build-storybook": "yarn workspace frontend build-storybook",
+    "format:frontend": "yarn workspace frontend exec prettier --write .",
+    "format:frontend:check": "yarn workspace frontend exec prettier --check ."
   }
 }

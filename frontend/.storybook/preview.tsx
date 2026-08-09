@@ -1,9 +1,14 @@
 import type { Decorator, Preview } from "@storybook/nextjs-vite";
-import { DocsContainer, type DocsContainerProps } from "@storybook/addon-docs/blocks";
+import {
+  DocsContainer,
+  type DocsContainerProps,
+} from "@storybook/addon-docs/blocks";
 import { addons } from "storybook/preview-api";
 import { GLOBALS_UPDATED } from "storybook/internal/core-events";
-import { useEffect } from "react";
+
 import "./../src/app/globals.css";
+
+import { useEffect } from "react";
 
 const channel = addons.getChannel();
 
@@ -21,7 +26,9 @@ const withTheme: Decorator = (Story, context) => {
 
 const ThemedDocsContainer = (props: DocsContainerProps) => {
   useEffect(() => {
-    const handleGlobalsUpdated = (event: { globals?: { backgrounds?: { value?: string } } }) => {
+    const handleGlobalsUpdated = (event: {
+      globals?: { backgrounds?: { value?: string } };
+    }) => {
       applyTheme(getTheme(event.globals?.backgrounds?.value));
     };
 
