@@ -18,21 +18,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Primary",
+    children: "Button",
     variant: "primary",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: "Secondary",
+    children: "Button",
     variant: "secondary",
   },
 };
 
 export const Tertiary: Story = {
   args: {
-    children: "Tertiary",
+    children: "Button",
     variant: "tertiary",
   },
 };
