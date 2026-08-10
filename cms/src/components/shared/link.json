@@ -24,6 +24,15 @@
     "rel": {
       "type": "string",
       "default": "noopener noreferrer"
+    },
+    "variant": {
+      "type": "enumeration",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ]
     }
   },
   "config": {}

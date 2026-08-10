@@ -31,6 +31,10 @@ export interface SharedLink extends Struct.ComponentSchema {
     target: Schema.Attribute.Enumeration<
       ['_self', '_blank', '_parent', '_top']
     >;
+    variant: Schema.Attribute.Enumeration<
+      ['primary', 'secondary', 'tertiary']
+    > &
+      Schema.Attribute.DefaultTo<'primary'>;
   };
 }
 
