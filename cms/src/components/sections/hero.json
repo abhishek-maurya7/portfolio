@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "greeting": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "shortIntro": {
+      "type": "blocks"
+    },
+    "resume": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "socials": {
+      "type": "component",
+      "component": "shared.link-with-icon",
+      "repeatable": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "openToWork": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
