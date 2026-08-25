@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_about_mes",
+  "info": {
+    "displayName": "About Me",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "footnote": {
+      "type": "component",
+      "component": "shared.foot-note",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -7,13 +7,16 @@
   "options": {},
   "attributes": {
     "label": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "href": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "target": {
       "type": "enumeration",
+      "default": "_self",
       "enum": [
         "_self",
         "_blank",

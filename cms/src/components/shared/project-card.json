@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_project_cards",
+  "info": {
+    "displayName": "Project Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tech_stacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tech-stack.tech-stack"
+    },
+    "links": {
+      "type": "component",
+      "component": "shared.link-with-icon",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

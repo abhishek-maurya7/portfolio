@@ -23,7 +23,10 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero"
+        "sections.hero",
+        "sections.about-me",
+        "sections.projects",
+        "sections.my-backpack"
       ]
     }
   }

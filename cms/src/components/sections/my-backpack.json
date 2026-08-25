@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_my_backpacks",
+  "info": {
+    "displayName": "My Backpack",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "tech_stacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tech-stack.tech-stack"
+    },
+    "footnote": {
+      "type": "component",
+      "component": "shared.foot-note",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

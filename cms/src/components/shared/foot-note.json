@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_foot_notes",
+  "info": {
+    "displayName": "Foot Note"
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}
