@@ -1,0 +1,11 @@
+packages:
+  - "frontend"
+  - "cms"
+allowBuilds:
+  '@apollo/protobufjs': true
+  '@swc/core': true
+  better-sqlite3: true
+  core-js-pure: false
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
