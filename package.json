@@ -3,8 +3,15 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --parallel --filter frontend --filter cms run dev",
-    "storybook": "pnpm --filter frontend storybook",
-    "build-storybook": "pnpm --filter frontend build-storybook",
+    "dev:frontend": "pnpm --filter frontend run dev",
+    "dev:cms": "pnpm --filter cms run dev",
+    "dev:storybook": "pnpm --filter frontend storybook",
+
+    "build": "pnpm run build:frontend && pnpm run build:cms",
+    "build:frontend": "pnpm --filter frontend run build",
+    "build:cms": "pnpm --filter cms run build",
+    "build-storybook": "pnpm --filter frontend run build-storybook",
+
     "format:frontend": "pnpm --filter frontend exec prettier --write .",
     "format:frontend:check": "pnpm --filter frontend exec prettier --check ."
   },
