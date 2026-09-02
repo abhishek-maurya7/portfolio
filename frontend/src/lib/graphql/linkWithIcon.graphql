@@ -1,0 +1,6 @@
+fragment LinkWithIcon on ComponentSharedLinkWithIcon {
+  icon
+  link {
+    ...Link
+  }
+}
