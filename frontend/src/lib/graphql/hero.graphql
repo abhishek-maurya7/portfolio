@@ -1,0 +1,14 @@
+fragment Hero on ComponentSectionsHero {
+    greeting
+    name
+    role
+    shortIntro
+    resume {
+        ...Link
+    }
+    socials {
+        ...LinkWithIcon
+    } 
+    location
+    openToWork
+}
