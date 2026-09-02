@@ -1029,7 +1029,7 @@ export interface SharedLinkWithIcon extends Struct.ComponentSchema {
 export interface SharedProjectCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_project_cards';
   info: {
-    displayName: 'Project Card';
+    displayName: 'Project';
   };
   attributes: {
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
