@@ -5,7 +5,6 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
 
-
     const data = await fetchGraphQL<{pages: { slug: string }[] }>({
         url: process.env.CMS_GRAPHQL_URL,
         query: GET_ALL_SLUGS,
