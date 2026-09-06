@@ -1,5 +1,5 @@
 type GraphQLOptions = {
-  url: string;
+  url?: string;
   query: string;
   variables?: Record<string, unknown>;
   headers?: HeadersInit;
@@ -11,6 +11,16 @@ export async function fetchGraphQL<T>({
   variables,
   headers,
 }: GraphQLOptions): Promise<T> {
+  const requestHeaders = new Headers(headers);
+
+  if (!url) {
+    throw new Error("GraphQL API URL is required");
+  }
+
+  if (!requestHeaders.get("Authorization")) {
+    throw new Error("GraphQL Authorization header is required");
+  }
+
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -25,7 +35,7 @@ export async function fetchGraphQL<T>({
 
   if (!response.ok) {
     throw new Error(
-      `GraphQL request failed: ${response.status} ${response.statusText}`,
+      `GraphQL request failed with HTTP ${response.status}: ${response.statusText}`,
     );
   }
 
