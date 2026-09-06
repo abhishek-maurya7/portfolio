@@ -1,4 +1,12 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["clsx", "cva", "cn", "cx"]
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindFunctions": [
+    "clsx",
+    "cva",
+    "cn",
+    "cx"
+  ],
+  "tabWidth": 2
 }
