@@ -1,18 +1,28 @@
-type FetchGraphQLOptions = {
-  method?: RequestInit["method"];
-  headers?: HeadersInit;
+type GraphQLOptions = {
+  url?: string;
+  query: string;
   variables?: Record<string, unknown>;
+  headers?: HeadersInit;
 };
 
-export async function fetchGraphQL(
-  url: string,
-  query: string,
-  options: FetchGraphQLOptions = {}
-) {
-  const { method = "POST", headers, variables } = options;
+export async function fetchGraphQL<T>({
+  url,
+  query,
+  variables,
+  headers,
+}: GraphQLOptions): Promise<T> {
+  const requestHeaders = new Headers(headers);
+
+  if (!url) {
+    throw new Error("GraphQL API URL is required");
+  }
+
+  if (!requestHeaders.get("Authorization")) {
+    throw new Error("GraphQL Authorization header is required");
+  }
 
   const response = await fetch(url, {
-    method,
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       ...headers,
@@ -24,7 +34,9 @@ export async function fetchGraphQL(
   });
 
   if (!response.ok) {
-    throw new Error("GraphQL query failed");
+    throw new Error(
+      `GraphQL request failed with HTTP ${response.status}: ${response.statusText}`,
+    );
   }
 
   const result = await response.json();
