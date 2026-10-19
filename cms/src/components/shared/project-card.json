@@ -1,7 +1,7 @@
 {
   "collectionName": "components_shared_project_cards",
   "info": {
-    "displayName": "Project"
+    "displayName": "Card"
   },
   "options": {},
   "attributes": {
@@ -22,7 +22,7 @@
         "audios"
       ]
     },
-    "tech_stacks": {
+    "tags": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tech-stack.tech-stack"
