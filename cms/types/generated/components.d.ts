@@ -87,7 +87,7 @@ export interface SharedLink extends Struct.ComponentSchema {
     > &
       Schema.Attribute.DefaultTo<'_self'>;
     variant: Schema.Attribute.Enumeration<
-      ['primary', 'secondary', 'tertiary']
+      ['primary', 'secondary', 'tertiary', 'iconOnly']
     > &
       Schema.Attribute.DefaultTo<'primary'>;
   };
@@ -1029,16 +1029,13 @@ export interface SharedLinkWithIcon extends Struct.ComponentSchema {
 export interface SharedProjectCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_project_cards';
   info: {
-    displayName: 'Project';
+    displayName: 'Card';
   };
   attributes: {
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Schema.Attribute.String;
     links: Schema.Attribute.Component<'shared.link-with-icon', true>;
-    tech_stacks: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::tech-stack.tech-stack'
-    >;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::tech-stack.tech-stack'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

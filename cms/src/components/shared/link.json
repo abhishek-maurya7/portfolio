@@ -34,7 +34,8 @@
       "enum": [
         "primary",
         "secondary",
-        "tertiary"
+        "tertiary",
+        "iconOnly"
       ]
     }
   },
