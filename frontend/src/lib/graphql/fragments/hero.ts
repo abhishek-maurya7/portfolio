@@ -6,6 +6,7 @@ export const HERO_FRAGMENT = `
   ${LINK_WITH_ICON_FRAGMENT}
 
   fragment Hero on ComponentSectionsHero {
+    __typename
     greeting
     name
     role
