@@ -1,16 +1,29 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva, cx, type VariantProps } from "class-variance-authority";
 import type {
   ComponentPropsWithoutRef,
-  ReactNode,
+  ElementType,
   HTMLAttributes,
+  ReactNode,
 } from "react";
+import { twMerge } from "tailwind-merge";
 
 const typographyClasses = cva("leading-normal", {
   variants: {
     variant: {
-      bodySmall: "text-sm",
-      bodyMedium: "text-base",
-      bodyLarge: "text-lg",
+      bodySmall: "text-sm leading-none",
+      bodyMedium: "text-base leading-tight",
+      bodyLarge: "text-lg leading-normal",
+    },
+    as: {
+      span: "",
+      p: "",
+      label: "",
+      h1: "text-4xl leading-snug md:text-5xl",
+      h2: "text-4xl leading-tight",
+      h3: "text-3xl leading-tight",
+      h4: "text-2xl leading-snug",
+      h5: "text-xl leading-snug",
+      h6: "text-lg leading-snug",
     },
   },
   defaultVariants: {
@@ -25,7 +38,7 @@ type TypographyProps<T extends TypographyElement = "span"> = {
   as?: T;
   children: ReactNode;
   className?: string;
-} & Omit<VariantProps<typeof typographyClasses>, "as"> &
+} & Pick<VariantProps<typeof typographyClasses>, "variant"> &
   Omit<ComponentPropsWithoutRef<T>, "as" | "children" | "className">;
 
 function Typography<T extends TypographyElement = "span">({
@@ -35,12 +48,12 @@ function Typography<T extends TypographyElement = "span">({
   className,
   ...props
 }: TypographyProps<T>) {
-  const Element = as ?? "span";
+  const Element = (as ?? "span") as ElementType<HTMLAttributes<HTMLElement>>;
 
   return (
     <Element
       {...(props as HTMLAttributes<HTMLElement>)}
-      className={typographyClasses({ variant, className })}
+      className={cx(twMerge(typographyClasses({ variant, as }), className))}
     >
       {children}
     </Element>
