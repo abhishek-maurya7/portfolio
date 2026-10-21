@@ -20,6 +20,7 @@ const linkClasses = cva("inline-flex items-center justify-center gap-2", {
       secondary:
         "rounded-lg border-2 border-[#264165] focus:ring-2 focus:ring-[#264165]/50 focus:outline-none",
       tertiary: "focus:ring-2 focus:ring-[#264165]/50 focus:outline-none",
+      flat: "p-0!",
     },
     iconOnly: {
       true: "size-9 p-0",
@@ -33,7 +34,7 @@ const linkClasses = cva("inline-flex items-center justify-center gap-2", {
 });
 
 type LinkTarget = keyof typeof targetMap;
-type LinkVariant = "primary" | "secondary" | "tertiary";
+type LinkVariant = "primary" | "secondary" | "tertiary" | "flat";
 
 export interface LinkData {
   __typename?: "ComponentSharedLink";

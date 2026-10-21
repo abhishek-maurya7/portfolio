@@ -72,6 +72,16 @@ export const Tertiary: Story = {
   },
 };
 
+export const Flat: Story = {
+  args: {
+    data: {
+      __typename: "ComponentSharedLink",
+      ...baseLink,
+      variant: "flat",
+    },
+  },
+};
+
 export const PrimaryIconOnly: Story = {
   args: {
     data: {
