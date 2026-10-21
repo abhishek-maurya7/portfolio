@@ -15,7 +15,7 @@ const classes = cva(
       variant: {
         primary: cx(
           "rounded-md",
-          "bg-indigo-600 hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600",
+          "bg-[#264165] hover:bg-[#264165] dark:bg-[#264165] dark:hover:bg-[#264165]",
           "text-zinc-50",
           "disabled:bg-indigo-600/40 disabled:text-zinc-50/70",
           "dark:disabled:bg-indigo-500/40 dark:disabled:text-zinc-50/50",
