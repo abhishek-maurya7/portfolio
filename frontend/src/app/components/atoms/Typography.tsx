@@ -11,19 +11,19 @@ const typographyClasses = cva("leading-normal", {
   variants: {
     variant: {
       bodySmall: "text-sm leading-none",
-      bodyMedium: "text-base leading-tight",
+      bodyMedium: "text-base leading-normal",
       bodyLarge: "text-lg leading-normal",
     },
     as: {
       span: "",
       p: "",
       label: "",
-      h1: "text-4xl leading-snug md:text-5xl",
-      h2: "text-4xl leading-tight",
-      h3: "text-3xl leading-tight",
-      h4: "text-2xl leading-snug",
-      h5: "text-xl leading-snug",
-      h6: "text-lg leading-snug",
+      h1: "text-4xl leading-none md:text-5xl",
+      h2: "text-4xl leading-none",
+      h3: "text-3xl leading-none",
+      h4: "text-2xl leading-none",
+      h5: "text-xl leading-none",
+      h6: "text-lg leading-none",
     },
   },
   defaultVariants: {
