@@ -32,7 +32,7 @@ export default function Hero({ data }: { data: HeroProps }) {
     openToWork,
   } = data;
   return (
-    <div className="flex h-screen items-end py-12 md:items-center md:justify-center">
+    <div className="flex h-[calc(100dvh-72px)] items-end py-12 md:items-center md:justify-center">
       <div className="md:max-w-2/3 lg:max-w-1/3">
         <Typography>{greeting}</Typography>
         <Typography as="h1">{name}</Typography>
