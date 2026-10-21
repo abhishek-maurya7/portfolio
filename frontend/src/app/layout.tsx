@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import Header, { type LinkData } from "@/app/components/organisms/header";
+import { fetchGraphQL } from "@/lib/fetch";
+import { GET_LAYOUT_DATA_QUERY } from "@/lib/graphql/queries/getLayoutData";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,17 +23,37 @@ export const metadata: Metadata = {
     "Frontend Developer specializing in React, Next.js, TypeScript, and modern web technologies. Explore my projects, technical blogs, and professional experience.",
 };
 
-export default function RootLayout({
+export interface LayoutData {
+  header: {
+    links: LinkData[];
+  };
+  footer: {
+    links: LinkData[];
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const response = await fetchGraphQL<LayoutData>({
+    url: process.env.CMS_GRAPHQL_URL,
+    query: GET_LAYOUT_DATA_QUERY,
+    headers: {
+      Authorization: `Bearer ${process.env.CMS_API_TOKEN}`,
+    },
+  });
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="dark bg-background flex min-h-full flex-col">
+        <Header data={response.header} />
+        {children}
+      </body>
     </html>
   );
 }
