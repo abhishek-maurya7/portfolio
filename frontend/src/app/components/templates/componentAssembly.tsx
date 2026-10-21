@@ -2,7 +2,7 @@ import Link, {
   type LinkData,
   type SocialLinkData,
 } from "@/app/components/atoms/link";
-import Hero, { type HeroProps } from "@/app/components/molecules/hero";
+import Hero, { type HeroProps } from "@/app/components/organisms/hero";
 
 export type ComponentData = HeroProps | LinkData | SocialLinkData;
 
