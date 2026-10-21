@@ -22,7 +22,9 @@ export interface SectionsHero extends Struct.ComponentSchema {
     greeting: Schema.Attribute.String;
     location: Schema.Attribute.String;
     name: Schema.Attribute.String;
-    openToWork: Schema.Attribute.Boolean;
+    openToWork: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     resume: Schema.Attribute.Component<'shared.link', false>;
     role: Schema.Attribute.String;
     shortIntro: Schema.Attribute.Blocks;
@@ -87,8 +89,9 @@ export interface SharedLink extends Struct.ComponentSchema {
     > &
       Schema.Attribute.DefaultTo<'_self'>;
     variant: Schema.Attribute.Enumeration<
-      ['primary', 'secondary', 'tertiary', 'iconOnly']
+      ['primary', 'secondary', 'tertiary']
     > &
+      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'primary'>;
   };
 }
@@ -1022,6 +1025,9 @@ export interface SharedLinkWithIcon extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'grip'>;
+    iconOnly: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.Component<'shared.link', false>;
   };
 }

@@ -30,12 +30,12 @@
     },
     "variant": {
       "type": "enumeration",
+      "required": true,
       "default": "primary",
       "enum": [
         "primary",
         "secondary",
-        "tertiary",
-        "iconOnly"
+        "tertiary"
       ]
     }
   },
