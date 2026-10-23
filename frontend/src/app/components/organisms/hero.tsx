@@ -61,7 +61,7 @@ export default function Hero({ data }: { data: HeroProps }) {
 
             {openToWork && (
               <div className="flex items-center">
-                <span className="mr-1 inline-block h-3 w-2 animate-[flip_5s_infinite] rounded-full border border-green-400"></span>
+                <span className="mr-1 inline-block h-3 w-2 animate-[flip_3s_ease-in-out_infinite] rounded-full border-2 border-green-400 transform-3d"></span>
                 <Typography>Open to Work</Typography>
               </div>
             )}

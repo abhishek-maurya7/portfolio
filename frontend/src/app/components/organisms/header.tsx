@@ -40,7 +40,7 @@ export default function Header({ data }: HeaderProps) {
 
   return (
     <header className="relative flex items-center justify-between p-4">
-      <div />
+      <div>{/* logo container */}</div>
 
       <nav>
         <ul
