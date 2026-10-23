@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import { cva } from "class-variance-authority";
 
 import Typography from "@/app/components/atoms/Typography";
-import Icon from "@/app/components/atoms/icon";
+import Icon from "@/app/components/atoms/icons";
 
 const targetMap = {
   self: "_self",

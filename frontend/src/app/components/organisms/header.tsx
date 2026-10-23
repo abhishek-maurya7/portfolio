@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { cx } from "class-variance-authority";
 
-import Icon from "@/app/components/atoms/icon";
+import Icon from "@/app/components/atoms/icons";
 import Button from "@/app/components/atoms/Button";
 
 const targetMap = {
