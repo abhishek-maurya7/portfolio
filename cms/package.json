@@ -23,14 +23,14 @@
     "@strapi/strapi": "5.57.0",
     "better-sqlite3": "13.0.3",
     "react": "^19.3.1",
-    "react-dom": "^18.0.0",
+    "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.4",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^26",
     "@types/react": "^19",
-    "@types/react-dom": "^18",
+    "@types/react-dom": "^19",
     "typescript": "^7"
   },
   "engines": {
