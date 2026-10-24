@@ -1,5 +1,5 @@
-import { LINK_FRAGMENT } from "./link";
-import { LINK_WITH_ICON_FRAGMENT } from "./linkWithIcon";
+import { LINK_FRAGMENT } from "@/lib/graphql/fragments/link";
+import { LINK_WITH_ICON_FRAGMENT } from "@/lib/graphql/fragments/linkWithIcon";
 
 export const HERO_FRAGMENT = `
   ${LINK_FRAGMENT}
