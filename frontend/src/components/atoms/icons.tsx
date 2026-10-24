@@ -54,6 +54,8 @@ import {
   Send,
   TextAlignJustify,
   X,
+  Sun,
+  Moon,
   type LucideProps,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -148,6 +150,8 @@ const lucideIcons = {
   telegram: Send,
   send: Send,
   copy: Copy,
+  sun: Sun,
+  moon: Moon,
 } as const;
 
 const iconMap = { ...lucideIcons, ...fontAwesomeIcon };

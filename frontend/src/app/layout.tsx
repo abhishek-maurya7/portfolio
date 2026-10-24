@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import Header, { type LinkData } from "@/components/organisms/header";
+import { type LinkData } from "@/components/organisms/header";
 import { fetchGraphQL } from "@/lib/fetch";
 import { GET_LAYOUT_DATA_QUERY } from "@/lib/graphql/queries/getLayoutData";
 
 import "./globals.css";
+import AppShell from "@/components/templates/AppShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,9 +51,8 @@ export default async function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="dark bg-background flex min-h-full flex-col">
-        <Header data={response.header} />
-        {children}
+      <body className="flex min-h-full flex-col">
+        <AppShell data={response}>{children}</AppShell>
       </body>
     </html>
   );
