@@ -36,12 +36,14 @@ export default function Hero({ data }: { data: HeroProps }) {
   return (
     <div className="flex h-[calc(100dvh-72px)] items-end py-12 md:items-center md:justify-center">
       <div className="md:max-w-2/3 lg:max-w-1/3">
-        <Typography>{greeting}</Typography>
-        <Typography as="h1">{name}</Typography>
+        <Typography className="text-text-muted">{greeting}</Typography>
+        <Typography as="h1" className="text-hero-heading">
+          {name}
+        </Typography>
         <Typography className="text-xl leading-snug">
           and I am {role}
         </Typography>
-        <div className="mt-2 text-[#E4E4E7]">
+        <div className="[&_strong]:text-body-bold-muted mt-2">
           <BlocksRenderer content={shortIntro} />
         </div>
         <div className="mt-4 flex items-center gap-6">
@@ -55,7 +57,7 @@ export default function Hero({ data }: { data: HeroProps }) {
         {(location || openToWork) && (
           <div
             className={cx(
-              "mt-12 flex items-center",
+              "text-text-muted mt-12 flex items-center text-sm",
               location && openToWork ? "justify-between" : "justify-end",
             )}
           >
@@ -63,7 +65,7 @@ export default function Hero({ data }: { data: HeroProps }) {
 
             {openToWork && (
               <div className="flex items-center">
-                <span className="mr-1 inline-block h-3 w-2 animate-[flip_3s_ease-in-out_infinite] rounded-full border-2 border-green-400 transform-3d"></span>
+                <span className="border-status-available mr-1 inline-block h-3 w-2 animate-[flip_3s_ease-in-out_infinite] rounded-full border-2 transform-3d"></span>
                 <Typography>Open to Work</Typography>
               </div>
             )}
