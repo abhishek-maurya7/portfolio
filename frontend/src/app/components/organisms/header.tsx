@@ -47,7 +47,7 @@ export default function Header({ data }: HeaderProps) {
           className={cx(
             "bg-background absolute top-full left-0 z-10 flex h-[calc(100dvh-72px)] w-full flex-col",
             { hidden: !open },
-            "md:static md:z-0 md:flex md:h-auto md:w-auto md:flex-row md:gap-3",
+            "md:static md:z-0 md:flex md:h-auto md:w-auto md:flex-row md:gap-3 md:bg-transparent",
           )}
         >
           {data.links.map(({ id, label, href, target, rel }) => (

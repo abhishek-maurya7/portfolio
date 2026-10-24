@@ -24,6 +24,7 @@ const typographyClasses = cva("leading-normal", {
       h4: "text-2xl leading-none",
       h5: "text-xl leading-none",
       h6: "text-lg leading-none",
+      em: "",
     },
   },
   defaultVariants: {
@@ -32,7 +33,7 @@ const typographyClasses = cva("leading-normal", {
 });
 
 type TypographyElement =
-  "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  "span" | "p" | "label" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "em";
 
 type TypographyProps<T extends TypographyElement = "span"> = {
   as?: T;

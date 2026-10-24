@@ -89,7 +89,7 @@ export interface SharedLink extends Struct.ComponentSchema {
     > &
       Schema.Attribute.DefaultTo<'_self'>;
     variant: Schema.Attribute.Enumeration<
-      ['primary', 'secondary', 'tertiary']
+      ['primary', 'secondary', 'tertiary', 'flat']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'primary'>;

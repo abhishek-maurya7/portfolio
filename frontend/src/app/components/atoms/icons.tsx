@@ -46,6 +46,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   ArrowRight,
+  Copy,
   ExternalLink,
   Globe,
   Link2,
@@ -146,6 +147,7 @@ const lucideIcons = {
   globe: Globe,
   telegram: Send,
   send: Send,
+  copy: Copy,
 } as const;
 
 const iconMap = { ...lucideIcons, ...fontAwesomeIcon };
