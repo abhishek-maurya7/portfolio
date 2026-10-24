@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import { cx } from "class-variance-authority";
+import Link from "next/link";
+import { useState } from "react";
 
-import Icon from "@/app/components/atoms/icons";
-import Button from "@/app/components/atoms/Button";
+import Button from "@/components/atoms/button";
+import Icon from "@/components/atoms/icons";
 
 const targetMap = {
   self: "_self",

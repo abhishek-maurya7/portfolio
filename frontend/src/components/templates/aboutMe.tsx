@@ -1,14 +1,14 @@
 "use client";
 
-import Typography from "@/app/components/atoms/Typography";
-import ComponentAssembly from "@/app/components/templates/componentAssembly";
+import Icon from "@/components/atoms/icons";
+import Typography from "@/components/atoms/typography";
+import ComponentAssembly from "@/components/templates/componentAssembly";
 import {
   BlocksRenderer,
   type BlocksContent,
 } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
 import Link from "next/link";
-import Icon from "../atoms/icons";
 
 export interface FootnoteData {
   __typename: "ComponentSharedFootNote";

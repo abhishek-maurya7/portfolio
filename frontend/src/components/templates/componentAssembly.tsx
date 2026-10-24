@@ -1,13 +1,13 @@
 import Link, {
   type LinkData,
   type SocialLinkData,
-} from "@/app/components/atoms/link";
-import Hero, { type HeroProps } from "@/app/components/organisms/hero";
+} from "@/components/atoms/link";
+import Footnote from "@/components/molecules/footnote";
+import Hero, { type HeroProps } from "@/components/organisms/hero";
 import AboutMe, {
   type AboutMeSectionData,
   type FootnoteData,
-} from "@/app/components/templates/aboutMe";
-import Footnote from "@/app/components/molecules/footnote";
+} from "@/components/templates/aboutMe";
 
 export type ComponentData =
   HeroProps | LinkData | SocialLinkData | AboutMeSectionData | FootnoteData;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import Header, { type LinkData } from "@/app/components/organisms/header";
+import Header, { type LinkData } from "@/components/organisms/header";
 import { fetchGraphQL } from "@/lib/fetch";
 import { GET_LAYOUT_DATA_QUERY } from "@/lib/graphql/queries/getLayoutData";
 

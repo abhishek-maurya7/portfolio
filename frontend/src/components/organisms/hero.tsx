@@ -4,9 +4,9 @@ import {
 } from "@strapi/blocks-react-renderer";
 import { cx } from "class-variance-authority";
 
-import Typography from "@/app/components/atoms/Typography";
-import ComponentAssembly from "@/app/components/templates/componentAssembly";
-import { LinkData, SocialLinkData } from "@/app/components/atoms/link";
+import { LinkData, SocialLinkData } from "@/components/atoms/link";
+import Typography from "@/components/atoms/typography";
+import ComponentAssembly from "@/components/templates/componentAssembly";
 
 export interface HeroProps {
   __typename: "ComponentSectionsHero";

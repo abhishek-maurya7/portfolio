@@ -3,7 +3,7 @@ import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/getAllSlugs";
 import { GET_PAGE_BY_SLUG } from "@/lib/graphql/queries/page/getContentBySlug";
 import ComponentAssembly, {
   type ComponentData,
-} from "@/app/components/templates/componentAssembly";
+} from "@/components/templates/componentAssembly";
 
 export const dynamicParams = false;
 

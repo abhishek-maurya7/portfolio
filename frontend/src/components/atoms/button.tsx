@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
 import { cva, cx } from "class-variance-authority";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonVariants = "primary" | "secondary" | "tertiary";
 
