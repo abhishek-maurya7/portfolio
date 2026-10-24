@@ -1,7 +1,7 @@
 import Link, {
   type LinkData,
   type SocialLinkData,
-} from "@/components/atoms/link";
+} from "@/components/molecules/link";
 import Footnote from "@/components/molecules/footnote";
 import Hero, { type HeroProps } from "@/components/organisms/hero";
 import AboutMe, {

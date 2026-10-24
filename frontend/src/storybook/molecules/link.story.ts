@@ -1,4 +1,4 @@
-import Link from "@/components/atoms/link";
+import Link from "@/components/molecules/link";
 import { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta = {

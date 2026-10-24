@@ -4,7 +4,7 @@ import {
 } from "@strapi/blocks-react-renderer";
 import { cx } from "class-variance-authority";
 
-import { LinkData, SocialLinkData } from "@/components/atoms/link";
+import { LinkData, SocialLinkData } from "@/components/molecules/link";
 import Typography from "@/components/atoms/typography";
 import ComponentAssembly from "@/components/templates/componentAssembly";
 
