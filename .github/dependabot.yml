@@ -3,6 +3,64 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     target-branch: dev
+    open-pull-requests-limit: 15
     schedule:
       interval: weekly
       day: monday
+    groups:
+      frontend-framework:
+        patterns:
+          - "next"
+          - "react"
+          - "react-dom"
+        update-types:
+          - minor
+          - patch
+      frontend-ui:
+        patterns:
+          - "@fortawesome/*"
+          - "@tailwindcss/*"
+          - "class-variance-authority"
+          - "lucide-react"
+          - "tailwind-merge"
+          - "tailwindcss"
+        update-types:
+          - minor
+          - patch
+      storybook:
+        patterns:
+          - "@storybook/*"
+          - "eslint-plugin-storybook"
+          - "storybook"
+        update-types:
+          - minor
+          - patch
+      strapi-cms:
+        patterns:
+          - "@strapi/*"
+          - "better-sqlite3"
+          - "react-router-dom"
+          - "styled-components"
+        update-types:
+          - minor
+          - patch
+      shared-tooling:
+        patterns:
+          - "@types/*"
+          - "eslint"
+          - "eslint-config-next"
+          - "husky"
+          - "lint-staged"
+          - "prettier"
+          - "prettier-plugin-tailwindcss"
+          - "typescript"
+          - "vite"
+        update-types:
+          - minor
+          - patch
+      other-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
