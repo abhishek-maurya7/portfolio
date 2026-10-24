@@ -1,48 +1,48 @@
 import {
-  faGithub,
-  faFacebook,
-  faDiscord,
-  faFigma,
-  faYoutube,
-  faCodepen,
-  faInstagram,
-  faTiktok,
-  faDribbble,
-  faMedium,
-  faWhatsapp,
-  faLine,
   faBehance,
-  faProductHunt,
-  faFreeCodeCamp,
-  faGitlab,
-  faSpotify,
-  faPlaystation,
   faBlogger,
   faBluesky,
+  faCodepen,
   faDev,
   faDigitalOcean,
+  faDiscord,
+  faDribbble,
+  faFacebook,
+  faFigma,
+  faFreeCodeCamp,
+  faGithub,
+  faGitlab,
   faHackerrank,
   faHuggingFace,
+  faInstagram,
   faItunesNote,
   faKaggle,
   faLastfm,
   faLeetcode,
+  faLine,
   faLinkedinIn,
   faLinktree,
+  faMedium,
   faMeta,
   faNotion,
   faNpm,
   faPinterestP,
+  faPlaystation,
+  faProductHunt,
   faQuora,
   faReddit,
   faSnapchat,
+  faSpotify,
   faSteam,
   faThreads,
+  faTiktok,
   faTumblr,
   faUpwork,
+  faWhatsapp,
   faXbox,
   faXTwitter,
   faYCombinator,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   ArrowRight,
@@ -54,6 +54,8 @@ import {
   Send,
   TextAlignJustify,
   X,
+  Sun,
+  Moon,
   type LucideProps,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -69,7 +71,7 @@ function fromFa(def: FaDefinition): ComponentType<LucideProps> {
   const [width, height, , , pathData] = def.icon;
   const paths = Array.isArray(pathData) ? pathData : [pathData];
 
-  function FaIcon({ size = 24, absoluteStrokeWidth, ...props }: LucideProps) {
+  function FaIcon({ size = 24, ...props }: LucideProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -148,6 +150,8 @@ const lucideIcons = {
   telegram: Send,
   send: Send,
   copy: Copy,
+  sun: Sun,
+  moon: Moon,
 } as const;
 
 const iconMap = { ...lucideIcons, ...fontAwesomeIcon };

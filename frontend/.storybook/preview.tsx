@@ -50,8 +50,8 @@ const preview: Preview = {
     layout: "centered",
     backgrounds: {
       options: {
-        light: { name: "Light", value: "#FAFAFA" },
-        dark: { name: "Dark", value: "#0a192f" },
+        light: { name: "Light", value: "var(--background)" },
+        dark: { name: "Dark", value: "var(--background)" },
       },
     },
     docs: {

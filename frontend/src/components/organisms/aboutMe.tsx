@@ -1,14 +1,14 @@
 "use client";
 
-import Typography from "@/app/components/atoms/Typography";
-import ComponentAssembly from "@/app/components/templates/componentAssembly";
+import Icon from "@/components/atoms/icons";
+import Typography from "@/components/atoms/typography";
+import Footnote from "@/components/molecules/footnote";
 import {
   BlocksRenderer,
   type BlocksContent,
 } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
 import Link from "next/link";
-import Icon from "../atoms/icons";
 
 export interface FootnoteData {
   __typename: "ComponentSharedFootNote";
@@ -50,7 +50,11 @@ export default function AboutMe({ section }: { section: AboutMeSectionData }) {
             const target = "target" in restProps ? restProps.target : undefined;
 
             return (
-              <Link href={url} {...restProps} className="text-amber-500">
+              <Link
+                href={url}
+                {...restProps}
+                className="text-link hover:text-link-hover focus-visible:outline-focus-ring underline underline-offset-2 focus-visible:outline-2"
+              >
                 {children}
                 &nbsp;
                 {target === "_blank" && (
@@ -89,13 +93,13 @@ export default function AboutMe({ section }: { section: AboutMeSectionData }) {
           },
           quote: ({ children }) => (
             <Typography as="em" className="inline-block w-full">
-              <blockquote className="relative overflow-hidden border-x-4 border-x-[#5279ad] bg-amber-500/10 bg-linear-to-br from-white/10 via-white/3 to-transparent px-4 py-3 backdrop-blur-xl">
+              <blockquote className="border-x-quote-border bg-quote-background relative overflow-hidden border-x-4 px-4 py-3">
                 {children}
               </blockquote>
             </Typography>
           ),
           code: ({ children }) => (
-            <div className="rounded-xl bg-slate-950 p-4 pt-3">
+            <div className="bg-code-background text-code-foreground rounded-xl p-4 pt-3">
               <div className="overflow-auto">
                 <pre className="mb-1">
                   <code>{children}</code>
@@ -106,7 +110,7 @@ export default function AboutMe({ section }: { section: AboutMeSectionData }) {
         }}
       />
 
-      {section.footnote && <ComponentAssembly component={section.footnote} />}
+      {section.footnote && <Footnote component={section.footnote} />}
     </div>
   );
 }
