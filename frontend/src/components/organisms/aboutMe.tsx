@@ -2,7 +2,7 @@
 
 import Icon from "@/components/atoms/icons";
 import Typography from "@/components/atoms/typography";
-import ComponentAssembly from "@/components/templates/componentAssembly";
+import ComponentAssembly from "@/components/componentAssembly";
 import {
   BlocksRenderer,
   type BlocksContent,

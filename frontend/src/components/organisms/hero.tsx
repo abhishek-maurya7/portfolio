@@ -6,7 +6,7 @@ import { cx } from "class-variance-authority";
 
 import { LinkData, SocialLinkData } from "@/components/molecules/link";
 import Typography from "@/components/atoms/typography";
-import ComponentAssembly from "@/components/templates/componentAssembly";
+import ComponentAssembly from "@/components/componentAssembly";
 
 export interface HeroProps {
   __typename: "ComponentSectionsHero";
