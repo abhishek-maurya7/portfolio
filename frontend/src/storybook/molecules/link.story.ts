@@ -1,161 +1,102 @@
-import Link from "@/components/molecules/link";
-import { Meta, StoryObj } from "@storybook/nextjs-vite";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+
+import Link, {
+  type LinkData,
+  type SocialLinkData,
+} from "@/components/molecules/link";
 
 const meta = {
-  title: "Atoms/Link",
+  title: "Molecules/Link",
   component: Link,
   tags: ["autodocs"],
-  args: {
-    data: {
-      __typename: "ComponentSharedLink",
-      label: "Resume",
-      href: "https://google.com",
-      target: "self",
-      rel: "noopener noreferrer",
-      variant: "primary",
-    },
-  },
 } satisfies Meta<typeof Link>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const baseLink = {
+const makeLink = (overrides: Partial<LinkData> = {}): LinkData => ({
+  __typename: "ComponentSharedLink",
   label: "Resume",
-  href: "https://google.com",
-  target: "self" as const,
+  href: "#",
+  target: "self",
   rel: "noopener noreferrer",
-};
+  variant: "primary",
+  ...overrides,
+});
 
-const baseSocialLink = {
-  __typename: "ComponentSharedLinkWithIcon" as const,
+const makeSocialLink = (
+  iconOnly: boolean,
+  variant: LinkData["variant"],
+): SocialLinkData => ({
+  __typename: "ComponentSharedLinkWithIcon",
   id: "30",
-  icon: "linkedin",
-  iconOnly: false,
-  link: {
-    ...baseLink,
+  icon: "sun",
+  iconOnly,
+  link: makeLink({
     label: "LinkedIn",
     href: "https://www.linkedin.com/",
-    target: "blank" as const,
-    variant: "primary" as const,
-  },
-};
+    target: "blank",
+    variant,
+  }),
+});
 
-export const Primary: Story = {
-  args: {
-    data: {
-      __typename: "ComponentSharedLink",
-      ...baseLink,
-      variant: "primary",
-    },
-  },
-};
+// Plain links
+export const Primary: Story = { args: { data: makeLink() } };
 
 export const Secondary: Story = {
-  args: {
-    data: {
-      __typename: "ComponentSharedLink",
-      ...baseLink,
-      variant: "secondary",
-    },
-  },
+  args: { data: makeLink({ variant: "secondary" }) },
 };
 
 export const Tertiary: Story = {
-  args: {
-    data: {
-      __typename: "ComponentSharedLink",
-      ...baseLink,
-      variant: "tertiary",
-    },
-  },
+  args: { data: makeLink({ variant: "tertiary" }) },
 };
 
 export const Flat: Story = {
+  args: { data: makeLink({ variant: "flat" }) },
+};
+
+// Flat + target="blank" is the only combo that shows the external-link icon
+export const FlatExternal: Story = {
   args: {
-    data: {
-      __typename: "ComponentSharedLink",
-      ...baseLink,
+    data: makeLink({
       variant: "flat",
-    },
+      href: "https://example.com",
+      target: "blank",
+    }),
   },
 };
 
+// Icon only
 export const PrimaryIconOnly: Story = {
-  args: {
-    data: {
-      ...baseSocialLink,
-      iconOnly: true,
-      link: {
-        ...baseSocialLink.link,
-        variant: "primary",
-      },
-    },
-  },
+  args: { data: makeSocialLink(true, "primary") },
 };
 
 export const SecondaryIconOnly: Story = {
-  args: {
-    data: {
-      ...baseSocialLink,
-      iconOnly: true,
-      link: {
-        ...baseSocialLink.link,
-        variant: "secondary",
-      },
-    },
-  },
+  args: { data: makeSocialLink(true, "secondary") },
 };
 
 export const TertiaryIconOnly: Story = {
-  args: {
-    data: {
-      ...baseSocialLink,
-      iconOnly: true,
-      link: {
-        ...baseSocialLink.link,
-        variant: "tertiary",
-      },
-    },
-  },
+  args: { data: makeSocialLink(true, "tertiary") },
 };
 
+export const FlatIconOnly: Story = {
+  args: { data: makeSocialLink(true, "flat") },
+};
+
+// Icon + label
 export const PrimaryWithIcon: Story = {
-  args: {
-    data: {
-      ...baseSocialLink,
-      iconOnly: false,
-      link: {
-        ...baseSocialLink.link,
-        variant: "primary",
-      },
-    },
-  },
+  args: { data: makeSocialLink(false, "primary") },
 };
 
 export const SecondaryWithIcon: Story = {
-  args: {
-    data: {
-      ...baseSocialLink,
-      iconOnly: false,
-      link: {
-        ...baseSocialLink.link,
-        variant: "secondary",
-      },
-    },
-  },
+  args: { data: makeSocialLink(false, "secondary") },
 };
 
 export const TertiaryWithIcon: Story = {
-  args: {
-    data: {
-      ...baseSocialLink,
-      iconOnly: false,
-      link: {
-        ...baseSocialLink.link,
-        variant: "tertiary",
-      },
-    },
-  },
+  args: { data: makeSocialLink(false, "tertiary") },
+};
+
+export const FlatWithIcon: Story = {
+  args: { data: makeSocialLink(false, "flat") },
 };
