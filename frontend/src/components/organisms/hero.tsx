@@ -4,9 +4,11 @@ import {
 } from "@strapi/blocks-react-renderer";
 import { cx } from "class-variance-authority";
 
-import { LinkData, SocialLinkData } from "@/components/molecules/link";
+import Link, {
+  type LinkData,
+  type SocialLinkData,
+} from "@/components/molecules/link";
 import Typography from "@/components/atoms/typography";
-import ComponentAssembly from "@/components/componentAssembly";
 
 export interface HeroProps {
   __typename: "ComponentSectionsHero";
@@ -43,10 +45,10 @@ export default function Hero({ data }: { data: HeroProps }) {
           <BlocksRenderer content={shortIntro} />
         </div>
         <div className="mt-4 flex items-center gap-6">
-          <ComponentAssembly component={resume} />
+          <Link data={resume} />
           <div className="flex gap-2">
             {socials.map((social) => {
-              return <ComponentAssembly key={social.id} component={social} />;
+              return <Link key={social.id} data={social} />;
             })}
           </div>
         </div>

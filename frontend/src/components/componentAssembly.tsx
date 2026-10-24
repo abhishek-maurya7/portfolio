@@ -1,19 +1,12 @@
-import Link, {
-  type LinkData,
-  type SocialLinkData,
-} from "@/components/molecules/link";
-import Footnote from "@/components/molecules/footnote";
-import Hero, { type HeroProps } from "@/components/organisms/hero";
 import AboutMe, {
   type AboutMeSectionData,
-  type FootnoteData,
-} from "@/components/templates/aboutMe";
+} from "@/components/organisms/aboutMe";
+import Hero, { type HeroProps } from "@/components/organisms/hero";
 
-export type ComponentData =
-  HeroProps | LinkData | SocialLinkData | AboutMeSectionData | FootnoteData;
+export type PageSectionData = HeroProps | AboutMeSectionData;
 
 interface ComponentAssemblyProps {
-  component: ComponentData;
+  component: PageSectionData;
 }
 
 export default function ComponentAssembly({
@@ -22,20 +15,22 @@ export default function ComponentAssembly({
   switch (component.__typename) {
     case "ComponentSectionsHero":
       return <Hero data={component} />;
-
-    case "ComponentSharedLink":
-    case "ComponentSharedLinkWithIcon":
-      return <Link data={component} />;
-
     case "ComponentSectionsAboutMe":
       return <AboutMe section={component} />;
 
-    case "ComponentSharedFootNote":
-      return <Footnote component={component} />;
+    default: {
+      const { __typename } = component as { __typename?: string };
+      if (!__typename) return null;
 
-    default:
-      console.log(
-        `${component.__typename} has not been mapped with any component`,
+      console.warn(
+        `[ComponentAssembly] "${__typename}" is not mapped to a component`,
       );
+
+      return (
+        <section id={__typename}>
+          {`${__typename} has not been mapped to any component in the assembly`}
+        </section>
+      );
+    }
   }
 }

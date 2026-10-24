@@ -2,7 +2,7 @@
 
 import Icon from "@/components/atoms/icons";
 import Typography from "@/components/atoms/typography";
-import ComponentAssembly from "@/components/componentAssembly";
+import Footnote from "@/components/molecules/footnote";
 import {
   BlocksRenderer,
   type BlocksContent,
@@ -106,7 +106,7 @@ export default function AboutMe({ section }: { section: AboutMeSectionData }) {
         }}
       />
 
-      {section.footnote && <ComponentAssembly component={section.footnote} />}
+      {section.footnote && <Footnote component={section.footnote} />}
     </div>
   );
 }

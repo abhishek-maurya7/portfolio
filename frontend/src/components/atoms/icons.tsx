@@ -69,7 +69,7 @@ function fromFa(def: FaDefinition): ComponentType<LucideProps> {
   const [width, height, , , pathData] = def.icon;
   const paths = Array.isArray(pathData) ? pathData : [pathData];
 
-  function FaIcon({ size = 24, absoluteStrokeWidth, ...props }: LucideProps) {
+  function FaIcon({ size = 24, ...props }: LucideProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
