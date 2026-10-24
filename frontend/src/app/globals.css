@@ -27,3 +27,24 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    animation-timing-function: ease-in;
+  }
+
+  25% {
+    transform: perspective(400px) rotateY(30deg);
+    animation-timing-function: linear;
+  }
+
+  75% {
+    transform: perspective(400px) rotateY(330deg);
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}

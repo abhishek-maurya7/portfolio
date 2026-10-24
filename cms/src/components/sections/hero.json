@@ -31,7 +31,9 @@
       "type": "string"
     },
     "openToWork": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "config": {}
