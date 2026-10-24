@@ -2,8 +2,8 @@ import { fetchGraphQL } from "@/lib/fetch";
 import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/getAllSlugs";
 import { GET_PAGE_BY_SLUG } from "@/lib/graphql/queries/page/getContentBySlug";
 import ComponentAssembly, {
-  type ComponentData,
-} from "@/app/components/templates/componentAssembly";
+  type PageSectionData,
+} from "@/components/componentAssembly";
 
 export const dynamicParams = false;
 
@@ -32,7 +32,7 @@ export default async function Page({
     pages: {
       title: string;
       slug: string;
-      sections: ComponentData[];
+      sections: PageSectionData[];
     }[];
   }>({
     url: process.env.CMS_GRAPHQL_URL,

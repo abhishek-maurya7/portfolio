@@ -2,8 +2,8 @@ import NextLink from "next/link";
 
 import { cva } from "class-variance-authority";
 
-import Typography from "@/app/components/atoms/Typography";
-import Icon from "@/app/components/atoms/icons";
+import Typography from "@/components/atoms/typography";
+import Icon from "@/components/atoms/icons";
 
 const targetMap = {
   self: "_self",
@@ -12,26 +12,30 @@ const targetMap = {
   top: "_top",
 } as const;
 
-const linkClasses = cva("inline-flex items-center justify-center gap-2", {
-  variants: {
-    variant: {
-      primary:
-        "rounded-lg bg-[#264165] text-[#E4E4E7] focus:ring-2 focus:ring-[#264165]/50 focus:outline-none",
-      secondary:
-        "rounded-lg border-2 border-[#264165] focus:ring-2 focus:ring-[#264165]/50 focus:outline-none",
-      tertiary: "focus:ring-2 focus:ring-[#264165]/50 focus:outline-none",
-      flat: "p-0!",
+const linkClasses = cva(
+  "focus-visible:ring-focus-ring inline-flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:outline-none",
+  {
+    variants: {
+      variant: {
+        primary:
+          "bg-action-background text-action-foreground hover:bg-action-background-hover rounded-lg",
+        secondary:
+          "border-action-border text-action-text hover:border-action-border-hover hover:text-action-text-hover rounded-lg border-2",
+        tertiary:
+          "border-action-border text-action-text hover:border-action-border-hover hover:text-action-text-hover border-b-2",
+        flat: "p-0!",
+      },
+      iconOnly: {
+        true: "size-9 p-0",
+        false: "px-3 py-2",
+      },
     },
-    iconOnly: {
-      true: "size-9 p-0",
-      false: "px-3 py-2",
+    defaultVariants: {
+      variant: "primary",
+      iconOnly: false,
     },
   },
-  defaultVariants: {
-    variant: "primary",
-    iconOnly: false,
-  },
-});
+);
 
 type LinkTarget = keyof typeof targetMap;
 type LinkVariant = "primary" | "secondary" | "tertiary" | "flat";
@@ -77,11 +81,8 @@ export default function Link({ data }: LinkProps) {
     >
       {icon && <Icon name={icon} aria-hidden="true" className="size-5" />}
       {!iconOnly && <Typography>{label}</Typography>}
-      {target === "blank" && variant === "flat" && (
-        <Icon
-          name="external-link"
-          className="w-3 -translate-y-1 text-amber-500"
-        />
+      {target === "blank" && variant === "flat" && !iconOnly && (
+        <Icon name="external-link" className="w-3 -translate-y-1" />
       )}
     </NextLink>
   );

@@ -11,7 +11,7 @@ interface FootnoteProps {
 export default function Footnote({ component }: { component: FootnoteProps }) {
   return (
     <div
-      className="my-2 border-t-2 border-[#233554] py-2"
+      className="border-border text-text-muted/70 mt-10 border-t-2 py-2 text-sm"
       id={component.__typename}
     >
       <BlocksRenderer content={component.body} />
