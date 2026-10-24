@@ -14,30 +14,30 @@
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
-    "@storybook/addon-a11y": "^10.5.5",
-    "@storybook/addon-docs": "^10.5.5",
+    "@storybook/addon-a11y": "^10.6.3",
+    "@storybook/addon-docs": "^10.6.3",
     "@strapi/blocks-react-renderer": "^1.0.2",
     "class-variance-authority": "^0.7.1",
-    "lucide-react": "^1.59.0",
-    "next": "16.2.11",
+    "lucide-react": "^1.61.0",
+    "next": "16.4.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@storybook/nextjs-vite": "^10.5.4",
+    "@storybook/nextjs-vite": "^10.6.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.11",
-    "eslint-plugin-storybook": "^10.5.4",
-    "prettier": "^3.9.6",
+    "eslint-config-next": "16.4.2",
+    "eslint-plugin-storybook": "^10.6.3",
+    "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "storybook": "^10.5.4",
+    "storybook": "^10.6.3",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vite": "^8.1.5"
+    "vite": "^8.3.5"
   }
 }
