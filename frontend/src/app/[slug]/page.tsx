@@ -1,9 +1,12 @@
-import { fetchGraphQL } from "@/lib/fetch";
-import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/getAllSlugs";
-import { GET_PAGE_BY_SLUG } from "@/lib/graphql/queries/page/getContentBySlug";
 import ComponentAssembly, {
   type PageSectionData,
 } from "@/components/componentAssembly";
+
+import { fetchGraphQL } from "@/lib/fetch";
+import getQueryBySlug from "@/lib/getQueryBySlug";
+import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/getAllSlugs";
+
+import { redirect } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -28,6 +31,10 @@ export default async function Page({
 }) {
   const { slug } = await params;
 
+  if (slug === "home") redirect("/");
+
+  const CMS_GRAPHQL_QUERY = getQueryBySlug(slug);
+
   const data = await fetchGraphQL<{
     pages: {
       title: string;
@@ -36,7 +43,7 @@ export default async function Page({
     }[];
   }>({
     url: process.env.CMS_GRAPHQL_URL,
-    query: GET_PAGE_BY_SLUG,
+    query: CMS_GRAPHQL_QUERY,
     variables: { slug },
     headers: {
       Authorization: `Bearer ${process.env.CMS_API_TOKEN}`,
@@ -46,11 +53,9 @@ export default async function Page({
   const pageData = data.pages[0];
   return (
     <div>
-      {pageData.sections.map((component, index) => {
+      {pageData.sections.map((component) => {
         return (
-          <section key={index} className="px-4">
-            <ComponentAssembly component={component} />
-          </section>
+          <ComponentAssembly key={component.__typename} component={component} />
         );
       })}
     </div>

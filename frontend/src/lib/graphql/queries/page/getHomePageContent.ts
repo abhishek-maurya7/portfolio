@@ -1,7 +1,7 @@
 import { HERO_FRAGMENT } from "@/lib/graphql/fragments/hero";
 import { ABOUT_ME_FRAGMENT } from "@/lib/graphql/fragments/aboutMe";
 
-export const GET_PAGE_BY_SLUG = `
+export const HOME_PAGE_QUERY = `
   ${HERO_FRAGMENT}
   ${ABOUT_ME_FRAGMENT}
 
