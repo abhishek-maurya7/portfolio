@@ -163,7 +163,6 @@ interface IconProps extends LucideProps {
 }
 
 export default function Icon({ name, ...props }: IconProps) {
-  console.log("🚀 ~ Icon ~ name:", name);
   if (!name) return null;
 
   const IconComponent = iconMap[name as IconName];

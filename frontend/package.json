@@ -18,10 +18,10 @@
     "@storybook/addon-docs": "^10.6.3",
     "@strapi/blocks-react-renderer": "^1.0.2",
     "class-variance-authority": "^0.7.1",
-    "lucide-react": "^1.61.0",
-    "next": "16.4.2",
-    "react": "19.3.1",
-    "react-dom": "19.3.1",
+    "lucide-react": "^1.59.0",
+    "next": "16.4.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "eslint-plugin-storybook": "^10.6.3",
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "storybook": "^10.6.3",
+    "storybook": "^10.6.2",
     "tailwindcss": "^4",
     "typescript": "^7",
     "vite": "^8.3.5"
