@@ -1,6 +1,6 @@
 type GraphQLOptions = {
   url?: string;
-  query: string;
+  query?: string;
   variables?: Record<string, unknown>;
   headers?: HeadersInit;
 };

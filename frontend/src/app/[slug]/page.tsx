@@ -6,7 +6,7 @@ import { fetchGraphQL } from "@/lib/fetch";
 import getQueryBySlug from "@/lib/getQueryBySlug";
 import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/getAllSlugs";
 
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -34,13 +34,18 @@ export default async function Page({
   if (slug === "home") redirect("/");
 
   const CMS_GRAPHQL_QUERY = getQueryBySlug(slug);
+  if (!CMS_GRAPHQL_QUERY) {
+    notFound();
+  }
 
   const data = await fetchGraphQL<{
-    pages: {
-      title: string;
-      slug: string;
-      sections: PageSectionData[];
-    }[];
+    pages?:
+      | {
+          title: string;
+          slug: string;
+          sections?: PageSectionData[];
+        }[]
+      | null;
   }>({
     url: process.env.CMS_GRAPHQL_URL,
     query: CMS_GRAPHQL_QUERY,
@@ -50,7 +55,11 @@ export default async function Page({
     },
   });
 
-  const pageData = data.pages[0];
+  const pageData = data.pages?.[0];
+  if (!pageData || !pageData.sections?.length) {
+    notFound();
+  }
+
   return (
     <div>
       {pageData.sections.map((component) => {
