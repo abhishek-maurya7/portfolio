@@ -1,6 +1,6 @@
 "use client";
 
-import ThemeContextProvider from "@/providers/themeProvider";
+import ThemeContextProvider from "@/providers/theme-provider";
 import Header from "@/components/organisms/header";
 import type { LayoutData } from "@/app/layout";
 import type { ReactNode } from "react";

@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 
 import Button from "@/components/atoms/button";
 import Icon from "@/components/atoms/icons";
-import { ThemeContext, type Theme } from "@/providers/themeProvider";
+import { ThemeContext, type Theme } from "@/providers/theme-provider";
 
 const targetMap = {
   self: "_self",

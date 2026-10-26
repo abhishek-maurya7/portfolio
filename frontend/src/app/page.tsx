@@ -1,8 +1,8 @@
 import ComponentAssembly, {
   type PageSectionData,
-} from "@/components/componentAssembly";
+} from "@/components/component-assembly";
 import { fetchGraphQL } from "@/lib/fetch";
-import getQueryBySlug from "@/lib/getQueryBySlug";
+import getQueryBySlug from "@/lib/get-query-by-slug";
 
 type HomePageResponse = {
   pages: Array<{

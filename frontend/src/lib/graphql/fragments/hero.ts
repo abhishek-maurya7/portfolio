@@ -1,6 +1,6 @@
 import { LINK_FRAGMENT } from "@/lib/graphql/fragments/link";
-import { LINK_WITH_ICON_FRAGMENT } from "@/lib/graphql/fragments/linkWithIcon";
-import { MEDIA_ITEM_FRAGMENT } from "@/lib/graphql/fragments/mediaItem";
+import { LINK_WITH_ICON_FRAGMENT } from "@/lib/graphql/fragments/link-with-icon";
+import { MEDIA_ITEM_FRAGMENT } from "@/lib/graphql/fragments/media-item";
 
 export const HERO_FRAGMENT = `
   ${LINK_FRAGMENT}
