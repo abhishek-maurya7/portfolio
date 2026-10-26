@@ -36,7 +36,7 @@ export default async function Home() {
   }
 
   return (
-    <main>
+    <main className="*:px-3">
       {pageData.sections.map((component) => {
         if (!component.__typename) return;
 
