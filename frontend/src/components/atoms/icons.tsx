@@ -47,15 +47,18 @@ import {
 import {
   ArrowRight,
   Copy,
+  EighthNote,
   ExternalLink,
   Globe,
   Link2,
   Mail,
+  Moon,
+  Pause,
+  Play,
   Send,
+  Sun,
   TextAlignJustify,
   X,
-  Sun,
-  Moon,
   type LucideProps,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -152,6 +155,9 @@ const lucideIcons = {
   copy: Copy,
   sun: Sun,
   moon: Moon,
+  play: Play,
+  pause: Pause,
+  "eighth-notes": EighthNote,
 } as const;
 
 const iconMap = { ...lucideIcons, ...fontAwesomeIcon };

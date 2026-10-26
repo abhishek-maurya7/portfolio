@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_media_items",
+  "info": {
+    "displayName": "Media Item",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "showTooltip": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "openWithPopup": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "config": {}
+}

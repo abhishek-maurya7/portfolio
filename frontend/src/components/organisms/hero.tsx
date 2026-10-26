@@ -9,6 +9,14 @@ import Link, {
   type SocialLinkData,
 } from "@/components/molecules/link";
 import Typography from "@/components/atoms/typography";
+import Media from "@/components/molecules/media";
+import type { MediaItem } from "@/components/atoms/video";
+
+export interface Gallery {
+  title: string;
+  description: string | null;
+  items: MediaItem[];
+}
 
 export interface HeroProps {
   __typename: "ComponentSectionsHero";
@@ -20,6 +28,7 @@ export interface HeroProps {
   socials: SocialLinkData[];
   location?: string;
   openToWork?: string;
+  showCase: Gallery | null;
 }
 
 export default function Hero({ data }: { data: HeroProps }) {
@@ -32,6 +41,7 @@ export default function Hero({ data }: { data: HeroProps }) {
     socials,
     location,
     openToWork,
+    showCase,
   } = data;
   return (
     <div className="flex h-[calc(100dvh-72px)] items-end py-12 md:items-center md:justify-center">
@@ -69,6 +79,23 @@ export default function Hero({ data }: { data: HeroProps }) {
                 <Typography>Open to Work</Typography>
               </div>
             )}
+          </div>
+        )}
+
+        {showCase && (
+          <div className="mt-10">
+            <Typography>{showCase.title}</Typography>
+
+            <div className="mt-1 grid auto-cols-fr grid-flow-col auto-rows-16 items-center gap-x-2 md:auto-rows-20">
+              {showCase.items.map((item, index) => (
+                <div
+                  key={`${index}-${item.label}`}
+                  className="border-border h-full min-h-0 min-w-0 overflow-hidden rounded-md border"
+                >
+                  <Media data={item} />
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

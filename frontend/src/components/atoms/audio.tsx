@@ -1,0 +1,53 @@
+"use client";
+
+import { useRef, useState } from "react";
+
+import Icon from "@/components/atoms/icons";
+import type { MediaItem } from "@/components/atoms/video";
+
+export default function Audio({ data }: { data: MediaItem }) {
+  const ref = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlayback = async () => {
+    if (!ref.current) return;
+
+    if (ref.current.paused) {
+      try {
+        await ref.current.play();
+      } catch (error) {
+        console.error("Audio playback failed:", error);
+      }
+    } else {
+      ref.current.pause();
+    }
+  };
+
+  return (
+    <div className="bg-quote-background flex h-full w-full items-center justify-center gap-3 p-3">
+      <audio
+        ref={ref}
+        controls={false}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+      >
+        <source src={data.media.url} type={data.media.mime} />
+      </audio>
+
+      <Icon name="eighth-notes" className="text-action-foreground" />
+
+      <button
+        type="button"
+        onClick={togglePlayback}
+        aria-label={isPlaying ? "Pause audio" : "Play audio"}
+        className="bg-action-background text-action-foreground hover:bg-action-background-hover focus-visible:outline-focus-ring flex size-1/3 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+      >
+        <Icon
+          name={isPlaying ? "pause" : "play"}
+          className="fill-action-foreground size-2/3 stroke-0"
+        />
+      </button>
+    </div>
+  );
+}
