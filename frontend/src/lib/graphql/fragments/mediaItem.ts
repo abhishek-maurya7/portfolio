@@ -6,7 +6,6 @@ export const MEDIA_ITEM_FRAGMENT = `
     media {
       ext
       url
-      formats
       mime
       width
       height

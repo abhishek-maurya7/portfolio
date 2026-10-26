@@ -21,7 +21,6 @@ const videoData: MediaItem = {
     ext: ".mp4",
     url: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     mime: "video/mp4",
-    formats: null,
     width: 640,
     height: 360,
   },
