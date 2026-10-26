@@ -29,7 +29,6 @@ export interface StrapiMedia {
   ext: string;
   url: string;
   mime: string;
-  formats: Record<string, StrapiMediaFormat> | null;
   width: number | null;
   height: number | null;
 }

@@ -21,7 +21,6 @@ const audioData: MediaItem = {
     ext: ".mp3",
     url: "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3",
     mime: "audio/mpeg",
-    formats: null,
     width: null,
     height: null,
   },
