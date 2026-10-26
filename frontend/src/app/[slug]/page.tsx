@@ -1,10 +1,10 @@
 import ComponentAssembly, {
   type PageSectionData,
-} from "@/components/componentAssembly";
+} from "@/components/component-assembly";
 
 import { fetchGraphQL } from "@/lib/fetch";
-import getQueryBySlug from "@/lib/getQueryBySlug";
-import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/getAllSlugs";
+import getQueryBySlug from "@/lib/get-query-by-slug";
+import { GET_ALL_SLUGS } from "@/lib/graphql/queries/page/get-all-slugs";
 
 import { notFound, redirect } from "next/navigation";
 

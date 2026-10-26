@@ -1,6 +1,6 @@
 import AboutMe, {
   type AboutMeSectionData,
-} from "@/components/organisms/aboutMe";
+} from "@/components/organisms/about-me";
 import Hero, { type HeroProps } from "@/components/organisms/hero";
 
 export type PageSectionData = HeroProps | AboutMeSectionData;
