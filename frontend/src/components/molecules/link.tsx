@@ -23,7 +23,7 @@ const linkClasses = cva(
           "border-action-border text-action-text hover:border-action-border-hover hover:text-action-text-hover rounded-lg border-2",
         tertiary:
           "border-action-border text-action-text hover:border-action-border-hover hover:text-action-text-hover border-b-2",
-        flat: "p-0!",
+        flat: "hover:text-action-text-hover p-0!",
       },
       iconOnly: {
         true: "size-9 p-0",

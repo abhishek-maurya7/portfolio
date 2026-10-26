@@ -13,6 +13,19 @@ export interface SectionsAboutMe extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsGallery extends Struct.ComponentSchema {
+  collectionName: 'components_sections_galleries';
+  info: {
+    displayName: 'Gallery';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<'shared.media-item', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsHero extends Struct.ComponentSchema {
   collectionName: 'components_sections_heroes';
   info: {
@@ -28,6 +41,7 @@ export interface SectionsHero extends Struct.ComponentSchema {
     resume: Schema.Attribute.Component<'shared.link', false>;
     role: Schema.Attribute.String;
     shortIntro: Schema.Attribute.Blocks;
+    showCase: Schema.Attribute.Component<'sections.gallery', false>;
     socials: Schema.Attribute.Component<'shared.link-with-icon', true>;
   };
 }
@@ -158,6 +172,24 @@ export interface SharedLinkWithIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMediaItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_items';
+  info: {
+    displayName: 'Media Item';
+    icon: 'dashboard';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    openWithPopup: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    showTooltip: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface SharedProjectCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_project_cards';
   info: {
@@ -186,12 +218,14 @@ declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
       'sections.about-me': SectionsAboutMe;
+      'sections.gallery': SectionsGallery;
       'sections.hero': SectionsHero;
       'sections.my-backpack': SectionsMyBackpack;
       'sections.projects': SectionsProjects;
       'shared.foot-note': SharedFootNote;
       'shared.link': SharedLink;
       'shared.link-with-icon': SharedLinkWithIcon;
+      'shared.media-item': SharedMediaItem;
       'shared.project-card': SharedProjectCard;
       'shared.rich-text': SharedRichText;
     }
