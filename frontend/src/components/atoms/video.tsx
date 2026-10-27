@@ -53,15 +53,11 @@ export default function Video({ data }: VideoProps) {
 
   const togglePlayback = async (): Promise<void> => {
     const video = ref.current;
-
     if (!video) return;
 
     if (video.paused || video.ended) {
       try {
-        if (video.ended) {
-          video.currentTime = 0;
-        }
-
+        if (video.ended) video.currentTime = 0;
         await video.play();
       } catch (error: unknown) {
         console.error("Video playback failed:", error);
@@ -72,10 +68,10 @@ export default function Video({ data }: VideoProps) {
   };
 
   return (
-    <div className="group relative flex h-full w-full items-center justify-center">
+    <div className="group relative h-full min-h-0 w-full min-w-0 overflow-hidden">
       <video
         ref={ref}
-        className="h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain"
         controls={false}
         playsInline
         onPlay={() => setIsPlaying(true)}
@@ -90,7 +86,7 @@ export default function Video({ data }: VideoProps) {
         onClick={togglePlayback}
         aria-label={isPlaying ? "Pause video" : "Play video"}
         className={cx(
-          "bg-action-background/70 text-action-foreground hover:bg-action-background-hover focus-visible:outline-focus-ring absolute top-1/2 left-1/2 flex size-1/3 -translate-1/2 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
+          "bg-action-background/70 text-action-foreground hover:bg-action-background-hover focus-visible:outline-focus-ring absolute top-1/2 left-1/2 flex aspect-square h-1/2 max-h-16 -translate-1/2 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2",
           isPlaying
             ? "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
             : "opacity-100",

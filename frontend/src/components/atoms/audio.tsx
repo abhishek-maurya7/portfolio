@@ -10,23 +10,25 @@ export default function Audio({ data }: { data: MediaItem }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlayback = async () => {
-    if (!ref.current) return;
+    const audio = ref.current;
+    if (!audio) return;
 
-    if (ref.current.paused) {
+    if (audio.paused) {
       try {
-        await ref.current.play();
+        await audio.play();
       } catch (error) {
         console.error("Audio playback failed:", error);
       }
     } else {
-      ref.current.pause();
+      audio.pause();
     }
   };
 
   return (
-    <div className="bg-quote-background flex h-full w-full items-center justify-center gap-3 p-3">
+    <div className="bg-quote-background flex h-full min-h-0 w-full min-w-0 items-center justify-center gap-3 overflow-hidden p-3">
       <audio
         ref={ref}
+        className="hidden"
         controls={false}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
@@ -41,7 +43,7 @@ export default function Audio({ data }: { data: MediaItem }) {
         type="button"
         onClick={togglePlayback}
         aria-label={isPlaying ? "Pause audio" : "Play audio"}
-        className="bg-action-background text-action-foreground hover:bg-action-background-hover focus-visible:outline-focus-ring flex size-1/3 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+        className="bg-action-background text-action-foreground hover:bg-action-background-hover focus-visible:outline-focus-ring flex aspect-square h-full max-h-12 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
       >
         <Icon
           name={isPlaying ? "pause" : "play"}
