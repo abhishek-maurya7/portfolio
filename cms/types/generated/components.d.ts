@@ -66,13 +66,13 @@ export interface SectionsMyBackpack extends Struct.ComponentSchema {
 export interface SectionsProjects extends Struct.ComponentSchema {
   collectionName: 'components_sections_projects';
   info: {
-    displayName: 'Projects';
+    displayName: 'Card Collection';
     icon: 'apps';
   };
   attributes: {
+    cards: Schema.Attribute.Component<'shared.project-card', true>;
     description: Schema.Attribute.String;
     footnote: Schema.Attribute.Component<'shared.foot-note', false>;
-    projects: Schema.Attribute.Component<'shared.project-card', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
