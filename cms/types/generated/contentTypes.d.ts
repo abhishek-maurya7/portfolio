@@ -521,8 +521,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       [
         'sections.hero',
         'sections.about-me',
-        'sections.projects',
         'sections.my-backpack',
+        'sections.card-collection',
       ]
     >;
     slug: Schema.Attribute.String &

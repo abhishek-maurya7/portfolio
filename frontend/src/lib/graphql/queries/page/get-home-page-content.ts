@@ -7,8 +7,8 @@ export const HOME_PAGE_QUERY = `
   ${ABOUT_ME_FRAGMENT}
   ${CARD_COLLECTION_FRAGMENT}
 
-  query Page($slug: String!) {
-    pages(filters: { slug: { eq: $slug } }) {
+  query Page($filters: PageFiltersInput) {
+    pages(filters: $filters) {
       title
       slug
       sections {
@@ -16,6 +16,7 @@ export const HOME_PAGE_QUERY = `
         ...AboutMe
         ...CardCollection
       }
+      documentId
     }
   }
 `;

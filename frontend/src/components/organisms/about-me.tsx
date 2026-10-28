@@ -11,7 +11,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export interface FootnoteData {
-  __typename: "ComponentSharedFootNote";
   body: BlocksContent;
 }
 

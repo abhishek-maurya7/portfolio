@@ -57,7 +57,7 @@ export default function Header({ data }: HeaderProps) {
             "md:static md:z-0 md:flex md:h-auto md:w-auto md:flex-row md:items-center md:gap-3 md:bg-transparent md:p-0",
           )}
         >
-          {data.links.map(({ id, label, href, target, rel }) => (
+          {data?.links.map(({ id, label, href, target, rel }) => (
             <li key={id ?? href} className="w-full">
               <Link
                 href={href}

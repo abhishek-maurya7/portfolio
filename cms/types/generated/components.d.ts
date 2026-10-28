@@ -13,6 +13,19 @@ export interface SectionsAboutMe extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCardCollection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_card_collections';
+  info: {
+    displayName: 'Card Collection';
+    icon: 'apps';
+  };
+  attributes: {
+    Cards: Schema.Attribute.Component<'shared.card', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsGallery extends Struct.ComponentSchema {
   collectionName: 'components_sections_galleries';
   info: {
@@ -63,16 +76,16 @@ export interface SectionsMyBackpack extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsProjects extends Struct.ComponentSchema {
-  collectionName: 'components_sections_projects';
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
   info: {
-    displayName: 'Card Collection';
-    icon: 'apps';
+    displayName: 'Card';
   };
   attributes: {
-    cards: Schema.Attribute.Component<'shared.project-card', true>;
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Schema.Attribute.String;
-    footnote: Schema.Attribute.Component<'shared.foot-note', false>;
+    links: Schema.Attribute.Component<'shared.link-with-icon', true>;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::tech-stack.tech-stack'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -190,20 +203,6 @@ export interface SharedMediaItem extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedProjectCard extends Struct.ComponentSchema {
-  collectionName: 'components_shared_project_cards';
-  info: {
-    displayName: 'Card';
-  };
-  attributes: {
-    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    description: Schema.Attribute.String;
-    links: Schema.Attribute.Component<'shared.link-with-icon', true>;
-    tags: Schema.Attribute.Relation<'oneToMany', 'api::tech-stack.tech-stack'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface SharedRichText extends Struct.ComponentSchema {
   collectionName: 'components_shared_rich_texts';
   info: {
@@ -218,15 +217,15 @@ declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
       'sections.about-me': SectionsAboutMe;
+      'sections.card-collection': SectionsCardCollection;
       'sections.gallery': SectionsGallery;
       'sections.hero': SectionsHero;
       'sections.my-backpack': SectionsMyBackpack;
-      'sections.projects': SectionsProjects;
+      'shared.card': SharedCard;
       'shared.foot-note': SharedFootNote;
       'shared.link': SharedLink;
       'shared.link-with-icon': SharedLinkWithIcon;
       'shared.media-item': SharedMediaItem;
-      'shared.project-card': SharedProjectCard;
       'shared.rich-text': SharedRichText;
     }
   }

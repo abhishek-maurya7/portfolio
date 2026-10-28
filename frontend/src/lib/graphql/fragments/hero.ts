@@ -1,4 +1,7 @@
-import { LINK_FRAGMENT } from "@/lib/graphql/fragments/link";
+import {
+  LINK_FRAGMENT,
+  LINK_WITH_ID_FRAGMENT,
+} from "@/lib/graphql/fragments/link";
 import { LINK_WITH_ICON_FRAGMENT } from "@/lib/graphql/fragments/link-with-icon";
 import { MEDIA_ITEM_FRAGMENT } from "@/lib/graphql/fragments/media-item";
 
@@ -11,7 +14,6 @@ export const HERO_FRAGMENT = `
     __typename
     greeting
     name
-    role
     shortIntro
     resume {
       ...Link
@@ -19,8 +21,6 @@ export const HERO_FRAGMENT = `
     socials {
       ...LinkWithIcon
     } 
-    location
-    openToWork
     showCase {
       title
       description

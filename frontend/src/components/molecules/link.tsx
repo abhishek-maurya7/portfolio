@@ -50,8 +50,8 @@ export interface LinkData {
   variant: LinkVariant;
 }
 
-export interface SocialLinkData {
-  __typename: "ComponentSharedLinkWithIcon";
+export interface LinkWithIconData {
+  __typename?: "ComponentSharedLinkWithIcon";
   id: string;
   icon: string;
   iconOnly: boolean;
@@ -59,11 +59,11 @@ export interface SocialLinkData {
 }
 
 type LinkProps = {
-  data: LinkData | SocialLinkData;
+  data: LinkData | LinkWithIconData;
 };
 
 export default function Link({ data }: LinkProps) {
-  const isSocialLink = data.__typename === "ComponentSharedLinkWithIcon";
+  const isSocialLink = "link" in data;
 
   const link = isSocialLink ? data.link : data;
   const icon = isSocialLink ? data.icon : undefined;

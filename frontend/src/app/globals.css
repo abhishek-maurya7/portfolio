@@ -30,6 +30,7 @@
   --code-background: #d4dbe4;
   --code-foreground: #172b46;
   --status-available: #15803d;
+  --card: #c12a2a;
 }
 
 .dark {
@@ -60,6 +61,7 @@
   --code-background: #050e1c;
   --code-foreground: #c8d6e8;
   --status-available: #4ade80;
+  --card: #0f2747;
 }
 
 @theme inline {
@@ -98,6 +100,8 @@
   --color-code-foreground: var(--code-foreground);
 
   --color-status-available: var(--status-available);
+
+  --color-card: var(--card);
 }
 
 body {
