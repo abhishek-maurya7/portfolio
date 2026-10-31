@@ -1,6 +1,7 @@
 import Typography from "@/components/atoms/typography";
-import Footnote, { FootnoteProps } from "@/components/molecules/footnote";
+import Footnote from "@/components/molecules/footnote";
 import Card, { type CardProps } from "@/components/organisms/card";
+import type { BlocksContent } from "@strapi/blocks-react-renderer";
 
 export interface CardCollectionData {
   __typename: "ComponentSectionsCardCollection";
@@ -8,7 +9,7 @@ export interface CardCollectionData {
   description: string | null;
   showBanner: boolean;
   cards: CardProps[];
-  footnote: FootnoteProps;
+  footnote: BlocksContent | null;
 }
 
 interface CardCollectionProps {
@@ -34,7 +35,7 @@ export default function CardCollection({ component }: CardCollectionProps) {
           return <Card {...card} key={card.id} showBanner={showBanner} />;
         })}
       </div>
-      {footnote && <Footnote component={footnote} />}
+      {footnote && <Footnote body={footnote} />}
     </section>
   );
 }

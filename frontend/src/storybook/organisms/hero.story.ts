@@ -28,7 +28,7 @@ const heroData: HeroProps = {
   socials: [
     {
       id: "github",
-      icon: "faGithub",
+      icon: "github",
       iconOnly: true,
       link: {
         label: "GitHub",
@@ -40,7 +40,7 @@ const heroData: HeroProps = {
     },
     {
       id: "linkedin",
-      icon: "faLinkedinIn",
+      icon: "linkedin_in",
       iconOnly: true,
       link: {
         label: "LinkedIn",

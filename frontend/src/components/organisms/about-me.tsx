@@ -2,7 +2,7 @@
 
 import Icon from "@/components/atoms/icons";
 import Typography from "@/components/atoms/typography";
-import Footnote, { FootnoteProps } from "@/components/molecules/footnote";
+import Footnote from "@/components/molecules/footnote";
 import {
   BlocksRenderer,
   type BlocksContent,
@@ -13,7 +13,7 @@ export interface AboutMeSectionData {
   __typename: "ComponentSectionsAboutMe";
   title: string;
   body: BlocksContent;
-  footnote?: FootnoteProps | null;
+  footnote?: BlocksContent | null;
 }
 
 export default function AboutMe({ section }: { section: AboutMeSectionData }) {
@@ -104,7 +104,7 @@ export default function AboutMe({ section }: { section: AboutMeSectionData }) {
         }}
       />
 
-      {section.footnote && <Footnote component={section.footnote} />}
+      {section.footnote && <Footnote body={section.footnote} />}
     </div>
   );
 }
