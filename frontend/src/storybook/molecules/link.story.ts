@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import Link, {
   type LinkData,
-  type SocialLinkData,
+  type LinkWithIconData,
 } from "@/components/molecules/link";
 
 const meta = {
@@ -28,7 +28,7 @@ const makeLink = (overrides: Partial<LinkData> = {}): LinkData => ({
 const makeSocialLink = (
   iconOnly: boolean,
   variant: LinkData["variant"],
-): SocialLinkData => ({
+): LinkWithIconData => ({
   __typename: "ComponentSharedLinkWithIcon",
   id: "30",
   icon: "sun",

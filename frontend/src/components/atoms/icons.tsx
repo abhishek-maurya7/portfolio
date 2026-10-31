@@ -46,6 +46,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   ArrowRight,
+  ArrowUpRight,
   Copy,
   EighthNote,
   ExternalLink,
@@ -158,6 +159,7 @@ const lucideIcons = {
   play: Play,
   pause: Pause,
   "eighth-notes": EighthNote,
+  "arrow-up-right": ArrowUpRight,
 } as const;
 
 const iconMap = { ...lucideIcons, ...fontAwesomeIcon };
