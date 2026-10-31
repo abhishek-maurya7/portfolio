@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_sections_projects",
+  "collectionName": "components_sections_card_collections",
   "info": {
     "displayName": "Card Collection",
     "icon": "apps"
@@ -11,12 +11,18 @@
       "required": true
     },
     "description": {
-      "type": "string"
+      "type": "text"
+    },
+    "showBanner": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
     "cards": {
       "type": "component",
-      "component": "shared.project-card",
-      "repeatable": true
+      "component": "shared.card",
+      "repeatable": true,
+      "max": 6
     },
     "footnote": {
       "type": "component",
