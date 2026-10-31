@@ -1,8 +1,7 @@
+import Typography from "@/components//atoms/typography";
+import { cx } from "class-variance-authority";
 import Image from "next/image";
 import Link, { type LinkWithIconData } from "../molecules/link";
-import Typography from "../atoms/typography";
-import Media from "../molecules/media";
-import { cx } from "class-variance-authority";
 
 interface Tag {
   documentId: string;

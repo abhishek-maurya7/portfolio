@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react";
 
-import { cx } from "class-variance-authority";
 import Icon from "@/components/atoms/icons";
+import { cx } from "class-variance-authority";
 
 /***
  * to be moved - started

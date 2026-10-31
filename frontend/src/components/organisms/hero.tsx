@@ -1,14 +1,14 @@
-import {
-  type BlocksContent,
-  BlocksRenderer,
-} from "@strapi/blocks-react-renderer";
+import Typography from "@/components/atoms/typography";
+import type { MediaItem } from "@/components/atoms/video";
 import Link, {
   type LinkData,
   type LinkWithIconData,
 } from "@/components/molecules/link";
-import Typography from "@/components/atoms/typography";
 import Media from "@/components/molecules/media";
-import type { MediaItem } from "@/components/atoms/video";
+import {
+  type BlocksContent,
+  BlocksRenderer,
+} from "@strapi/blocks-react-renderer";
 
 export interface Gallery {
   title: string;

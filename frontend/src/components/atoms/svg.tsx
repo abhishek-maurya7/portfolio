@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import type { MediaItem } from "@/components/atoms/video";
+import { useEffect, useState } from "react";
 
 export default function Svg({ data }: { data: MediaItem }) {
   const [svg, setSvg] = useState("");

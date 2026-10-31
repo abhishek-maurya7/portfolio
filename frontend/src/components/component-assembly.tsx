@@ -1,10 +1,10 @@
 import AboutMe, {
   type AboutMeSectionData,
 } from "@/components/organisms/about-me";
-import Hero, { type HeroProps } from "@/components/organisms/hero";
 import CardCollection, {
   type CardCollectionData,
-} from "./organisms/card-collection";
+} from "@/components/organisms/card-collection";
+import Hero, { type HeroProps } from "@/components/organisms/hero";
 
 export type PageSectionData =
   HeroProps | AboutMeSectionData | CardCollectionData;

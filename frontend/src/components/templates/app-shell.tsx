@@ -1,8 +1,8 @@
 "use client";
 
-import ThemeContextProvider from "@/providers/theme-provider";
-import Header from "@/components/organisms/header";
 import type { LayoutData } from "@/app/layout";
+import Header from "@/components/organisms/header";
+import ThemeContextProvider from "@/providers/theme-provider";
 import type { ReactNode } from "react";
 
 type AppShellProps = {

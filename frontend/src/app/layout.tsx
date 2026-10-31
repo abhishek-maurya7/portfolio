@@ -5,8 +5,8 @@ import { type LinkData } from "@/components/organisms/header";
 import { fetchGraphQL } from "@/lib/fetch";
 import { GET_LAYOUT_DATA_QUERY } from "@/lib/graphql/queries/get-layout-data";
 
-import "./globals.css";
 import AppShell from "@/components/templates/app-shell";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

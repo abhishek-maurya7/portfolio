@@ -1,6 +1,6 @@
 import Typography from "@/components/atoms/typography";
+import Footnote, { FootnoteProps } from "@/components/molecules/footnote";
 import Card, { type CardProps } from "@/components/organisms/card";
-import Footnote, { FootnoteProps } from "../molecules/footnote";
 
 export interface CardCollectionData {
   __typename: "ComponentSectionsCardCollection";

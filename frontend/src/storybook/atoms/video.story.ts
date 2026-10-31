@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import Video from "@/components/atoms/video";
 import type { MediaItem } from "@/components/atoms/video";
+import Video from "@/components/atoms/video";
 
 const meta = {
   title: "Atoms/Video",
