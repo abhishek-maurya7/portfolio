@@ -9,6 +9,7 @@ import {
   type BlocksContent,
   BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
+import { cx } from "class-variance-authority";
 
 export interface Gallery {
   title: string;
@@ -23,11 +24,22 @@ export interface HeroProps {
   shortIntro: BlocksContent;
   resume: LinkData;
   socials: LinkWithIconData[];
+  location?: string;
+  openToWork?: string;
   showCase: Gallery | null;
 }
 
 export default function Hero({ data }: { data: HeroProps }) {
-  const { greeting, name, shortIntro, resume, socials, showCase } = data;
+  const {
+    greeting,
+    name,
+    shortIntro,
+    resume,
+    socials,
+    location,
+    openToWork,
+    showCase,
+  } = data;
   return (
     <div className="flex h-[calc(100dvh-72px)] flex-col items-end py-12 md:items-center md:justify-center">
       <div className="lg:w-4/5 xl:w-2/3">
@@ -46,6 +58,23 @@ export default function Hero({ data }: { data: HeroProps }) {
             })}
           </div>
         </div>
+        {(location || openToWork) && (
+          <div
+            className={cx(
+              "text-text-muted mt-12 flex items-center text-sm",
+              location && openToWork ? "justify-between" : "justify-end",
+            )}
+          >
+            {location && <Typography>{location}</Typography>}
+
+            {openToWork && (
+              <div className="flex items-center">
+                <span className="border-status-available mr-1 inline-block h-3 w-2 animate-[flip_3s_ease-in-out_infinite] rounded-full border-2 transform-3d"></span>
+                <Typography>Open to Work</Typography>
+              </div>
+            )}
+          </div>
+        )}
         {showCase && (
           <div className="mt-10">
             <Typography>{showCase.title}</Typography>

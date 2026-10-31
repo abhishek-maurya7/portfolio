@@ -18,6 +18,8 @@ export const HERO_FRAGMENT = `
     socials {
       ...LinkWithIcon
     } 
+    location
+    openToWork
     showCase {
       title
       description
