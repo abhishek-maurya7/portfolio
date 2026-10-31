@@ -49,7 +49,7 @@ export default async function Page({
   }>({
     url: process.env.CMS_GRAPHQL_URL,
     query: CMS_GRAPHQL_QUERY,
-    variables: { slug },
+    variables: { filters: { slug: { eq: slug } } },
     headers: {
       Authorization: `Bearer ${process.env.CMS_API_TOKEN}`,
     },

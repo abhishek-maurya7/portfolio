@@ -11,7 +11,6 @@ export const HERO_FRAGMENT = `
     __typename
     greeting
     name
-    role
     shortIntro
     resume {
       ...Link

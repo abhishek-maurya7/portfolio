@@ -2,12 +2,9 @@
 
 import { useRef, useState } from "react";
 
-import { cx } from "class-variance-authority";
 import Icon from "@/components/atoms/icons";
+import { cx } from "class-variance-authority";
 
-/***
- * to be moved - started
- ***/
 export interface StrapiMediaFormat {
   name: string;
   hash: string;
@@ -43,10 +40,6 @@ export interface MediaItem {
 interface VideoProps {
   data: MediaItem;
 }
-/***
- * to be moved - end
- ***/
-
 export default function Video({ data }: VideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);

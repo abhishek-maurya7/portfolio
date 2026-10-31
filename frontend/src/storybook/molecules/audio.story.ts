@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import Audio from "@/components/atoms/audio";
-import type { MediaItem } from "@/components/atoms/video";
+import Audio, { type MediaItem } from "@/components/molecules/audio";
 
 const meta = {
-  title: "Atoms/Audio",
+  title: "Molecules/Audio",
   component: Audio,
   tags: ["autodocs"],
 } satisfies Meta<typeof Audio>;

@@ -1,16 +1,14 @@
+import Typography from "@/components/atoms/typography";
+import Link, {
+  type LinkData,
+  type LinkWithIconData,
+} from "@/components/molecules/link";
+import Media, { type MediaItem } from "@/components/molecules/media";
 import {
   type BlocksContent,
   BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
 import { cx } from "class-variance-authority";
-
-import Link, {
-  type LinkData,
-  type SocialLinkData,
-} from "@/components/molecules/link";
-import Typography from "@/components/atoms/typography";
-import Media from "@/components/molecules/media";
-import type { MediaItem } from "@/components/atoms/video";
 
 export interface Gallery {
   title: string;
@@ -22,10 +20,9 @@ export interface HeroProps {
   __typename: "ComponentSectionsHero";
   greeting: string;
   name: string;
-  role: string;
   shortIntro: BlocksContent;
   resume: LinkData;
-  socials: SocialLinkData[];
+  socials: LinkWithIconData[];
   location?: string;
   openToWork?: string;
   showCase: Gallery | null;
@@ -35,7 +32,6 @@ export default function Hero({ data }: { data: HeroProps }) {
   const {
     greeting,
     name,
-    role,
     shortIntro,
     resume,
     socials,
@@ -44,14 +40,11 @@ export default function Hero({ data }: { data: HeroProps }) {
     showCase,
   } = data;
   return (
-    <div className="flex h-[calc(100dvh-72px)] items-end py-12 md:items-center md:justify-center">
-      <div className="md:max-w-2/3 xl:max-w-1/3">
+    <div className="flex h-[calc(100dvh-72px)] flex-col items-end py-12 md:items-center md:justify-center">
+      <div className="lg:w-4/5 xl:w-2/3">
         <Typography className="text-text-muted">{greeting}</Typography>
         <Typography as="h1" className="text-hero-heading">
           {name}
-        </Typography>
-        <Typography className="text-xl leading-snug">
-          and I am {role}
         </Typography>
         <div className="[&_strong]:text-body-bold-muted mt-2">
           <BlocksRenderer content={shortIntro} />
@@ -81,7 +74,6 @@ export default function Hero({ data }: { data: HeroProps }) {
             )}
           </div>
         )}
-
         {showCase && (
           <div className="mt-10">
             <Typography>{showCase.title}</Typography>

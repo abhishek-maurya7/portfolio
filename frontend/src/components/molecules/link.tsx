@@ -2,8 +2,8 @@ import NextLink from "next/link";
 
 import { cva } from "class-variance-authority";
 
-import Typography from "@/components/atoms/typography";
 import Icon from "@/components/atoms/icons";
+import Typography from "@/components/atoms/typography";
 
 const targetMap = {
   self: "_self",
@@ -23,10 +23,10 @@ const linkClasses = cva(
           "border-action-border text-action-text hover:border-action-border-hover hover:text-action-text-hover rounded-lg border-2",
         tertiary:
           "border-action-border text-action-text hover:border-action-border-hover hover:text-action-text-hover border-b-2",
-        flat: "hover:text-action-text-hover p-0!",
+        flat: "hover:text-action-text-hover justify-start p-0!",
       },
       iconOnly: {
-        true: "size-9 p-0",
+        true: "size-10 justify-center! p-0",
         false: "px-3 py-2",
       },
     },
@@ -50,8 +50,8 @@ export interface LinkData {
   variant: LinkVariant;
 }
 
-export interface SocialLinkData {
-  __typename: "ComponentSharedLinkWithIcon";
+export interface LinkWithIconData {
+  __typename?: "ComponentSharedLinkWithIcon";
   id: string;
   icon: string;
   iconOnly: boolean;
@@ -59,11 +59,11 @@ export interface SocialLinkData {
 }
 
 type LinkProps = {
-  data: LinkData | SocialLinkData;
+  data: LinkData | LinkWithIconData;
 };
 
 export default function Link({ data }: LinkProps) {
-  const isSocialLink = data.__typename === "ComponentSharedLinkWithIcon";
+  const isSocialLink = "link" in data;
 
   const link = isSocialLink ? data.link : data;
   const icon = isSocialLink ? data.icon : undefined;

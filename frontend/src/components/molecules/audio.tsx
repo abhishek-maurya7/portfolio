@@ -3,7 +3,21 @@
 import { useRef, useState } from "react";
 
 import Icon from "@/components/atoms/icons";
-import type { MediaItem } from "@/components/atoms/video";
+
+interface StrapiMedia {
+  ext: string;
+  url: string;
+  mime: string;
+  width: number | null;
+  height: number | null;
+}
+
+export interface MediaItem {
+  label: string;
+  showTooltip: boolean;
+  openWithPopup: boolean;
+  media: StrapiMedia;
+}
 
 export default function Audio({ data }: { data: MediaItem }) {
   const ref = useRef<HTMLAudioElement>(null);

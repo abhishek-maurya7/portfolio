@@ -52,8 +52,10 @@ export async function fetchGraphQL<T>({
   }
 
   if (!response.ok) {
+    const responseBody = await response.text();
+    const details = responseBody ? `: ${responseBody.slice(0, 2000)}` : "";
     throw new Error(
-      `GraphQL request failed with HTTP ${response.status}: ${response.statusText}`,
+      `GraphQL request failed with HTTP ${response.status}: ${response.statusText}${details}`,
     );
   }
 

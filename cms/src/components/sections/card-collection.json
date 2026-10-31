@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_sections_projects",
+  "collectionName": "components_sections_card_collections",
   "info": {
-    "displayName": "Projects",
+    "displayName": "Card Collection",
     "icon": "apps"
   },
   "options": {},
@@ -11,12 +11,18 @@
       "required": true
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
-    "projects": {
+    "showBanner": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "cards": {
       "type": "component",
-      "component": "shared.project-card",
-      "repeatable": true
+      "component": "shared.card",
+      "repeatable": true,
+      "max": 6
     },
     "footnote": {
       "type": "component",

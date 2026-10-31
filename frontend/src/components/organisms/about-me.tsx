@@ -2,30 +2,24 @@
 
 import Icon from "@/components/atoms/icons";
 import Typography from "@/components/atoms/typography";
-import Footnote from "@/components/molecules/footnote";
+import Footnote, { FootnoteProps } from "@/components/molecules/footnote";
 import {
   BlocksRenderer,
   type BlocksContent,
 } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
 import Link from "next/link";
-
-export interface FootnoteData {
-  __typename: "ComponentSharedFootNote";
-  body: BlocksContent;
-}
-
 export interface AboutMeSectionData {
   __typename: "ComponentSectionsAboutMe";
   title: string;
   body: BlocksContent;
-  footnote?: FootnoteData | null;
+  footnote?: FootnoteProps | null;
 }
 
 export default function AboutMe({ section }: { section: AboutMeSectionData }) {
   return (
     <div
-      className="mx-auto space-y-1 py-12 md:w-2/3"
+      className="mx-auto space-y-1 py-12"
       id={section.__typename}
       key={section.__typename}
     >
