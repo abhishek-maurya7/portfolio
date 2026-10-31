@@ -40,7 +40,7 @@ export default function Hero({ data }: { data: HeroProps }) {
     showCase,
   } = data;
   return (
-    <div className="flex h-[calc(100dvh-72px)] flex-col items-end py-12 md:items-center md:justify-center">
+    <div className="flex h-[calc(100dvh-72px)] items-end py-12 md:items-center md:justify-center">
       <div className="lg:w-4/5 xl:w-2/3">
         <Typography className="text-text-muted">{greeting}</Typography>
         <Typography as="h1" className="text-hero-heading">
