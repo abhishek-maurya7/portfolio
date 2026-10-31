@@ -19,9 +19,9 @@ export async function generateStaticParams() {
     },
   });
 
-  return data.pages.map((page) => ({
-    slug: page.slug,
-  }));
+  return data.pages
+    .filter((page) => page.slug !== "home")
+    .map((page) => ({ slug: page.slug }));
 }
 
 export default async function Page({
