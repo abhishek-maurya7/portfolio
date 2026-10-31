@@ -91,7 +91,7 @@ export default function Header({ data }: HeaderProps) {
         aria-expanded={open}
         variant="tertiary"
       >
-        <Icon name={open ? "x" : "text-align-justify"} />
+        <Icon name={open ? "x" : "text_align_justify"} />
       </Button>
     </header>
   );
