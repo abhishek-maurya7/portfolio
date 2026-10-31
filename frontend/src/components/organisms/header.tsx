@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 
 import Button from "@/components/atoms/button";
 import Icon from "@/components/atoms/icons";
-import { ThemeContext, type Theme } from "@/providers/themeProvider";
+import { ThemeContext, type Theme } from "@/providers/theme-provider";
 
 const targetMap = {
   self: "_self",
@@ -57,7 +57,7 @@ export default function Header({ data }: HeaderProps) {
             "md:static md:z-0 md:flex md:h-auto md:w-auto md:flex-row md:items-center md:gap-3 md:bg-transparent md:p-0",
           )}
         >
-          {data.links.map(({ id, label, href, target, rel }) => (
+          {data?.links.map(({ id, label, href, target, rel }) => (
             <li key={id ?? href} className="w-full">
               <Link
                 href={href}
@@ -91,7 +91,7 @@ export default function Header({ data }: HeaderProps) {
         aria-expanded={open}
         variant="tertiary"
       >
-        <Icon name={open ? "x" : "text-align-justify"} />
+        <Icon name={open ? "x" : "text_align_justify"} />
       </Button>
     </header>
   );

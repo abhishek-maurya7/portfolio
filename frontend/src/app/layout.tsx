@@ -3,10 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { type LinkData } from "@/components/organisms/header";
 import { fetchGraphQL } from "@/lib/fetch";
-import { GET_LAYOUT_DATA_QUERY } from "@/lib/graphql/queries/getLayoutData";
+import { GET_LAYOUT_DATA_QUERY } from "@/lib/graphql/queries/get-layout-data";
 
+import AppShell from "@/components/templates/app-shell";
 import "./globals.css";
-import AppShell from "@/components/templates/AppShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

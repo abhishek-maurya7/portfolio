@@ -30,6 +30,10 @@
   --code-background: #d4dbe4;
   --code-foreground: #172b46;
   --status-available: #15803d;
+  --card: #f1f3f6;
+  --card-heading: #262626;
+  --card-description: #344256;
+  --card-tag: #15803d;
 }
 
 .dark {
@@ -60,6 +64,10 @@
   --code-background: #050e1c;
   --code-foreground: #c8d6e8;
   --status-available: #4ade80;
+  --card: #14263f;
+  --card-heading: #e8eef7;
+  --card-description: #aebed2;
+  --card-tag: #4ade80;
 }
 
 @theme inline {
@@ -98,6 +106,11 @@
   --color-code-foreground: var(--code-foreground);
 
   --color-status-available: var(--status-available);
+
+  --color-card: var(--card);
+  --color-card-heading: var(--card-heading);
+  --color-card-description: var(--card-description);
+  --color-card-tag: var(--card-tag);
 }
 
 body {

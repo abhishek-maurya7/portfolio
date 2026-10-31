@@ -1,8 +1,8 @@
 import ComponentAssembly, {
   type PageSectionData,
-} from "@/components/componentAssembly";
+} from "@/components/component-assembly";
 import { fetchGraphQL } from "@/lib/fetch";
-import getQueryBySlug from "@/lib/getQueryBySlug";
+import getQueryBySlug from "@/lib/get-query-by-slug";
 
 type HomePageResponse = {
   pages: Array<{
@@ -23,7 +23,7 @@ export default async function Home() {
     url: CMS_GRAPHQL_URL,
     query,
     variables: {
-      slug: "home",
+      filters: { slug: { eq: "home" } },
     },
     headers: {
       Authorization: `Bearer ${CMS_API_TOKEN}`,
@@ -36,7 +36,7 @@ export default async function Home() {
   }
 
   return (
-    <main>
+    <main className="*:px-3">
       {pageData.sections.map((component) => {
         if (!component.__typename) return;
 
