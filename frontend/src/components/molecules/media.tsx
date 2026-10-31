@@ -1,15 +1,20 @@
 "use client";
 
-import Audio from "@/components/atoms/audio";
+import Audio from "@/components/molecules/audio";
+import type { MediaItem as AudioMediaItem } from "@/components/molecules/audio";
 import Svg from "@/components/atoms/svg";
-import Video, { type MediaItem } from "@/components/atoms/video";
+import Video, {
+  type MediaItem as VideoMediaItem,
+} from "@/components/molecules/video";
 import Image from "next/image";
+
+export type MediaItem = AudioMediaItem | VideoMediaItem;
 
 export default function Media({ data }: { data: MediaItem }) {
   const { media, label } = data;
 
   if (media.mime === "image/svg+xml") {
-    return <Svg data={data} />;
+    return <Svg url={media.url} />;
   }
 
   if (media.mime.startsWith("image/")) {

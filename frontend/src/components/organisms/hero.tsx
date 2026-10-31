@@ -1,10 +1,9 @@
 import Typography from "@/components/atoms/typography";
-import type { MediaItem } from "@/components/atoms/video";
 import Link, {
   type LinkData,
   type LinkWithIconData,
 } from "@/components/molecules/link";
-import Media from "@/components/molecules/media";
+import Media, { type MediaItem } from "@/components/molecules/media";
 import {
   type BlocksContent,
   BlocksRenderer,

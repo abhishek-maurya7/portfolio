@@ -1,15 +1,14 @@
 "use client";
 
-import type { MediaItem } from "@/components/atoms/video";
 import { useEffect, useState } from "react";
 
-export default function Svg({ data }: { data: MediaItem }) {
+export default function Svg({ url }: { url: string }) {
   const [svg, setSvg] = useState("");
 
   useEffect(() => {
     async function getSvgData() {
       try {
-        const response = await fetch(data.media.url);
+        const response = await fetch(url);
 
         if (!response.ok) {
           throw new Error(`Failed to fetch SVG: ${response.status}`);
@@ -23,7 +22,7 @@ export default function Svg({ data }: { data: MediaItem }) {
     }
 
     getSvgData();
-  }, [data.media.url]);
+  }, [url]);
 
   return (
     <span
