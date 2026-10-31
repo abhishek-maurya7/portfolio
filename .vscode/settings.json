@@ -3,5 +3,8 @@
     "tailwindCSS.classFunctions": [
         "cva",
         "cx"
-    ]
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    }
 }
