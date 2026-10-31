@@ -25,9 +25,7 @@
       "max": 6
     },
     "footnote": {
-      "type": "component",
-      "component": "shared.foot-note",
-      "repeatable": false
+      "type": "blocks"
     }
   },
   "config": {}

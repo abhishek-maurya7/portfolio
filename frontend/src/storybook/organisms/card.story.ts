@@ -36,7 +36,7 @@ export const Default: Story = {
       {
         __typename: "ComponentSharedLinkWithIcon",
         id: "3",
-        icon: "faBehance",
+        icon: "behance",
         iconOnly: true,
         link: {
           id: "3",

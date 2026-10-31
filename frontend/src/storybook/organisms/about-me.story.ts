@@ -36,14 +36,12 @@ const section: AboutMeSectionData = {
       children: [{ type: "text", text: "Build with care and keep learning." }],
     },
   ],
-  footnote: {
-    body: [
-      {
-        type: "paragraph",
-        children: [{ type: "text", text: "Thanks for stopping by." }],
-      },
-    ],
-  },
+  footnote: [
+    {
+      type: "paragraph",
+      children: [{ type: "text", text: "Thanks for stopping by." }],
+    },
+  ],
 };
 
 const meta = {

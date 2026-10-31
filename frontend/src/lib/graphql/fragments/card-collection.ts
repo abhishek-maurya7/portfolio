@@ -10,8 +10,6 @@ ${CARD_FRAGMENT}
     cards {
       ...Card
     }
-    footnote {
-      body
-    }
+    footnote
   }
 `;
