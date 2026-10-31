@@ -26,7 +26,7 @@ const collectionData: CardCollectionData = {
       links: [
         {
           id: "portfolio-source",
-          icon: "faGithub",
+          icon: "github",
           iconOnly: true,
           link: {
             label: "Source code",
@@ -38,7 +38,7 @@ const collectionData: CardCollectionData = {
         },
         {
           id: "portfolio-demo",
-          icon: "external-link",
+          icon: "external_link",
           iconOnly: false,
           link: {
             label: "Live demo",
@@ -61,19 +61,17 @@ const collectionData: CardCollectionData = {
       showBanner: false,
     },
   ],
-  footnote: {
-    body: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            text: "Project descriptions are provided for demonstration.",
-          },
-        ],
-      },
-    ],
-  },
+  footnote: [
+    {
+      type: "paragraph",
+      children: [
+        {
+          type: "text",
+          text: "Project descriptions are provided for demonstration.",
+        },
+      ],
+    },
+  ],
 };
 
 const meta = {

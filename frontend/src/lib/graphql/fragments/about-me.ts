@@ -4,9 +4,6 @@ export const ABOUT_ME_FRAGMENT = `
     __typename
     title
     body
-    footnote {
-      __typename
-      body
-    }
+    footnote
   }
 `;
