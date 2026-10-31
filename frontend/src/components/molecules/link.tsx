@@ -82,7 +82,7 @@ export default function Link({ data }: LinkProps) {
       {icon && <Icon name={icon} aria-hidden="true" className="size-5" />}
       {!iconOnly && <Typography>{label}</Typography>}
       {target === "blank" && variant === "flat" && !iconOnly && (
-        <Icon name="external-link" className="w-3 -translate-y-1" />
+        <Icon name="external_link" className="w-3 -translate-y-1" />
       )}
     </NextLink>
   );

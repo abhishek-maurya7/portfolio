@@ -51,7 +51,7 @@ export default function Audio({ data }: { data: MediaItem }) {
         <source src={data.media.url} type={data.media.mime} />
       </audio>
 
-      <Icon name="eighth-notes" className="text-action-foreground" />
+      <Icon name="eighth_notes" className="text-action-foreground" />
 
       <button
         type="button"
