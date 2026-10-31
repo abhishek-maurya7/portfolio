@@ -23,7 +23,7 @@ export default async function Home() {
     url: CMS_GRAPHQL_URL,
     query,
     variables: {
-      slug: "home",
+      filters: { slug: { eq: "home" } },
     },
     headers: {
       Authorization: `Bearer ${CMS_API_TOKEN}`,

@@ -11,7 +11,6 @@ export const HERO_FRAGMENT = `
     __typename
     greeting
     name
-    role
     shortIntro
     resume {
       ...Link
@@ -19,8 +18,6 @@ export const HERO_FRAGMENT = `
     socials {
       ...LinkWithIcon
     } 
-    location
-    openToWork
     showCase {
       title
       description

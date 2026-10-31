@@ -2,14 +2,15 @@ import { CARD_FRAGMENT } from "@/lib/graphql/fragments/card";
 
 export const CARD_COLLECTION_FRAGMENT = `
 ${CARD_FRAGMENT}
-  fragment CardCollection on ComponentSectionsProjects {
+  fragment CardCollection on ComponentSectionsCardCollection {
+    __typename
     title
     description
+    showBanner
     cards {
       ...Card
     }
     footnote {
-      __typename
       body
     }
   }

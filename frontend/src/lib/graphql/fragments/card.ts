@@ -1,5 +1,5 @@
 export const CARD_FRAGMENT = `
-  fragment Card on ComponentSharedProjectCard {
+  fragment Card on ComponentSharedCard {
     id
     title
     description
@@ -14,8 +14,6 @@ export const CARD_FRAGMENT = `
       url
       width
       height
-      alternativeText
-      caption
     }
   }
 `;
