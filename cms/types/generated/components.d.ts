@@ -8,7 +8,7 @@ export interface SectionsAboutMe extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.Blocks;
-    footnote: Schema.Attribute.Component<'shared.foot-note', false>;
+    footnote: Schema.Attribute.Blocks;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -28,7 +28,7 @@ export interface SectionsCardCollection extends Struct.ComponentSchema {
         number
       >;
     description: Schema.Attribute.Text;
-    footnote: Schema.Attribute.Component<'shared.foot-note', false>;
+    footnote: Schema.Attribute.Blocks;
     showBanner: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
@@ -77,7 +77,7 @@ export interface SectionsMyBackpack extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    footnote: Schema.Attribute.Component<'shared.foot-note', false>;
+    footnote: Schema.Attribute.Blocks;
     tech_stacks: Schema.Attribute.Relation<
       'oneToMany',
       'api::tech-stack.tech-stack'
