@@ -1,8 +1,6 @@
-"use client";
-
-import Audio from "@/components/molecules/audio";
-import type { MediaItem as AudioMediaItem } from "@/components/molecules/audio";
 import Svg from "@/components/atoms/svg";
+import type { MediaItem as AudioMediaItem } from "@/components/molecules/audio";
+import Audio from "@/components/molecules/audio";
 import Video, {
   type MediaItem as VideoMediaItem,
 } from "@/components/molecules/video";

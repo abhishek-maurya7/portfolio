@@ -1,28 +1,11 @@
-"use client";
+export default async function Svg({ url }: { url: string }) {
+  const response = await fetch(url);
 
-import { useEffect, useState } from "react";
+  if (!response.ok) {
+    throw new Error(`Failed to fetch SVG: ${response.status}`);
+  }
 
-export default function Svg({ url }: { url: string }) {
-  const [svg, setSvg] = useState("");
-
-  useEffect(() => {
-    async function getSvgData() {
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          throw new Error(`Failed to fetch SVG: ${response.status}`);
-        }
-
-        const text = await response.text();
-        setSvg(text);
-      } catch (error) {
-        console.error("Failed to load SVG:", error);
-      }
-    }
-
-    getSvgData();
-  }, [url]);
+  const svg = await response.text();
 
   return (
     <span
