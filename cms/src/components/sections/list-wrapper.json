@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_list_wrappers",
+  "info": {
+    "displayName": "List Wrapper"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "lists": {
+      "type": "component",
+      "component": "shared.list",
+      "repeatable": true
+    },
+    "footnote": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

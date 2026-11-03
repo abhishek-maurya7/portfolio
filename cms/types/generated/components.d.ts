@@ -69,6 +69,19 @@ export interface SectionsHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsListWrapper extends Struct.ComponentSchema {
+  collectionName: 'components_sections_list_wrappers';
+  info: {
+    displayName: 'List Wrapper';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    footnote: Schema.Attribute.Blocks;
+    lists: Schema.Attribute.Component<'shared.list', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsMyBackpack extends Struct.ComponentSchema {
   collectionName: 'components_sections_my_backpacks';
   info: {
@@ -198,6 +211,28 @@ export interface SharedLinkWithIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_lists';
+  info: {
+    displayName: 'List';
+    icon: 'layer';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared.list-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedListItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_list_items';
+  info: {
+    displayName: 'List Item';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMediaItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_media_items';
   info: {
@@ -233,11 +268,14 @@ declare module '@strapi/strapi' {
       'sections.card-collection': SectionsCardCollection;
       'sections.gallery': SectionsGallery;
       'sections.hero': SectionsHero;
+      'sections.list-wrapper': SectionsListWrapper;
       'sections.my-backpack': SectionsMyBackpack;
       'shared.card': SharedCard;
       'shared.foot-note': SharedFootNote;
       'shared.link': SharedLink;
       'shared.link-with-icon': SharedLinkWithIcon;
+      'shared.list': SharedList;
+      'shared.list-item': SharedListItem;
       'shared.media-item': SharedMediaItem;
       'shared.rich-text': SharedRichText;
     }

@@ -523,6 +523,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.about-me',
         'sections.my-backpack',
         'sections.card-collection',
+        'sections.list-wrapper',
       ]
     >;
     slug: Schema.Attribute.String &
