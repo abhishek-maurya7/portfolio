@@ -5,9 +5,12 @@ import CardCollection, {
   type CardCollectionData,
 } from "@/components/organisms/card-collection";
 import Hero, { type HeroProps } from "@/components/organisms/hero";
+import ListWrapper, {
+  type ListWrapperData,
+} from "@/components/organisms/list-wrapper";
 
 export type PageSectionData =
-  HeroProps | AboutMeSectionData | CardCollectionData;
+  HeroProps | AboutMeSectionData | CardCollectionData | ListWrapperData;
 
 interface ComponentAssemblyProps {
   component: PageSectionData;
@@ -24,6 +27,9 @@ export default function ComponentAssembly({
 
     case "ComponentSectionsCardCollection":
       return <CardCollection component={component} />;
+
+    case "ComponentSectionsListWrapper":
+      return <ListWrapper component={component} />;
 
     default: {
       const { __typename } = component as { __typename?: string };
