@@ -20,7 +20,7 @@ export default function ListWrapper({
 
   return (
     <section aria-label={title} className="py-12">
-      <header className="mb-8 max-w-2xl space-y-2">
+      <header className="mb-4 max-w-2xl space-y-2">
         <Typography as="h2">{title}</Typography>
         {description && <Typography as="p">{description}</Typography>}
       </header>
