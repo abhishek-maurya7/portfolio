@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "shared.media-item",
+      "repeatable": false
+    },
     "links": {
       "type": "dynamiczone",
       "components": [

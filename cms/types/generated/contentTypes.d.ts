@@ -492,6 +492,7 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
       'api::header.header'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Component<'shared.media-item', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

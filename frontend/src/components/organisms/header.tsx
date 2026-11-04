@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 
 import Button from "@/components/atoms/button";
 import Icon from "@/components/atoms/icons";
+import Media, { type MediaItem } from "@/components/molecules/media";
 import { ThemeContext, type Theme } from "@/providers/theme-provider";
 
 const targetMap = {
@@ -28,7 +29,8 @@ export interface LinkData {
   variant: LinkVariant;
 }
 
-interface HeaderData {
+export interface HeaderData {
+  logo?: MediaItem | null;
   links: LinkData[];
 }
 
@@ -46,8 +48,12 @@ export default function Header({ data }: HeaderProps) {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <header className="relative flex items-center justify-between p-4">
-      <div>{/* logo container */}</div>
+    <header className="relative flex h-20 items-center justify-between p-4">
+      {data.logo && (
+        <div className="h-20">
+          <Media data={data.logo} />
+        </div>
+      )}
 
       <nav>
         <ul
