@@ -5,6 +5,13 @@ export const GET_LAYOUT_DATA_QUERY = `
 
   query Header {
     header {
+      logo {
+        label
+        media {
+          url
+          mime
+        }
+      }
       links {
         ...Link
       }

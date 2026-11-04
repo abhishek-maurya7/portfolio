@@ -1,11 +1,40 @@
-export default async function Svg({ url }: { url: string }) {
-  const response = await fetch(url);
+"use client";
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch SVG: ${response.status}`);
-  }
+import { useEffect, useState } from "react";
 
-  const svg = await response.text();
+export default function Svg({ url }: { url: string }) {
+  const [svg, setSVG] = useState<string>("");
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const fetchSVG = async () => {
+      try {
+        const response = await fetch(url, {
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch SVG: ${response.status}`);
+        }
+
+        const data = await response.text();
+
+        setSVG(data);
+      } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") {
+          return;
+        }
+
+        console.error("Failed to load SVG:", error);
+        setSVG("");
+      }
+    };
+
+    fetchSVG();
+
+    return () => controller.abort();
+  }, [url]);
 
   return (
     <span
